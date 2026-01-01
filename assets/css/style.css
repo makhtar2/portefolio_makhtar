@@ -1,0 +1,84 @@
+/* assets/css/style.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+html { scroll-behavior: smooth; }
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0F172A; /* Fond Ardoise/Nuit */
+    color: #94A3B8; /* Texte Gris Clair */
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 { color: #F1F5F9; }
+.text-accent { color: #22D3EE; } /* Cyan Vif */
+
+/* --- Navigation --- */
+.nav-link-active { color: #22D3EE; font-weight: 500; }
+
+/* --- Cartes --- */
+.card {
+    background-color: #1E293B; /* Ardoise Foncé */
+    border: 1px solid #334155;
+    border-radius: 0.75rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Boutons --- */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.75rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.btn-primary { background-color: #22D3EE; color: #0F172A; }
+.btn-primary:hover { background-color: #67E8F9; transform: scale(1.05); }
+
+/* --- Animation au défilement (Sécurité Anti-Page Blanche) --- */
+/* Par défaut, le contenu est visible (si JS est désactivé) */
+.scroll-animate { opacity: 1; transform: translateY(0); }
+/* Si JS est actif, il retire la classe 'no-js' et les animations s'enclenchent */
+html:not(.no-js) .scroll-animate {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+html:not(.no-js) .scroll-animate.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+
+/* --- Styles du Carrousel (Swiper.js) --- */
+.swiper-button-next, .swiper-button-prev { color: #22D3EE !important; }
+.swiper-pagination-bullet-active { background: #22D3EE !important; }
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 450px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.skill-tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem; /* 14px */
+    font-weight: 500;
+    border-radius: 9999px; /* Pill */
+    background-color: #334155; /* Ardoise / Gris-Bleu */
+    color: #E2E8F0;
+}
+
+.event-icon {
+    width: 64px; /* Taille de l'icône */
+    height: 64px;
+    object-fit: contain; /* Assure que l'image tient dans le cadre */
+    margin-bottom: 1rem; /* Espace sous l'icône */
+}
