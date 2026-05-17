@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import LatestProjects from "@/components/LatestProjects";
 import OurSpecs from "@/components/OurSpec";
+import LinkedInPosts from "@/components/LinkedInPosts";
 import projectsData from "@/assets/data/projects.json";
 import Link from "next/link";
 
@@ -11,6 +12,7 @@ export default async function Home() {
             {/* On only show a preview/highlights on the landing page */}
             <LatestProjects projects={projectsData.slice(0, 3)} />
             <OurSpecs />
+            <LinkedInPosts />
             
             {/* CTA for other pages */}
             <div className="text-center my-24 px-6">
