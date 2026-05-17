@@ -2,6 +2,7 @@
 import React from 'react'
 import Title from './Title'
 import Image from 'next/image'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { DownloadIcon, Mail, MapPin } from 'lucide-react'
 
@@ -76,4 +77,3 @@ const About = () => {
 }
 
 export default About
-out
