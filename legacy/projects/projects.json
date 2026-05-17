@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Designer Graphique Freelance | UCAK",
+        "desc": "Conception de l'ensemble des supports de communication visuelle de l'université (affiches, bannières web, publications).",
+        "image": "imagesuniv.svg",
+        "category": "design",
+        "links": {
+            "view": "#",
+            "code": "#"
+        }
+    },
+    {
+        "name": "Fondateur & Designer | JULO",
+        "desc": "Gestion complète de ma startup : prospection, gestion de projet, et création d'identités visuelles.",
+        "image": "logokarama.jpeg",
+        "category": "design",
+        "links": {
+            "view": "#",
+            "code": "#"
+        }
+    },
+    {
+        "name": "Hackathon Sonatel",
+        "desc": "1ère Place | Hackathon à Touba (2024), démontrant l'excellence en innovation et développement.",
+        "image": "mentor.png",
+        "category": "web",
+        "links": {
+            "view": "#",
+            "code": "#"
+        }
+    },
+    {
+        "name": "RIO DIGITAL SHOW",
+        "desc": "2ème Place | Hackathon à Rufisque (2025), reconnaissance de compétences en innovation digitale.",
+        "image": "mentor.png",
+        "category": "web",
+        "links": {
+            "view": "#",
+            "code": "#"
+        }
+    }
+]

@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+    --color-brand-primary: #d9a54e;
+    --color-brand-secondary: #c2773a;
+}
+
+:root {
+    --brand-primary: #d9a54e;
+    --brand-secondary: #c2773a;
+}
+
+@layer base {
+    html {
+        @apply scroll-smooth;
+        scroll-padding-top: 100px;
+    }
+    
+    body {
+        @apply antialiased text-slate-900 bg-white overflow-x-hidden;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    button, a {
+        @apply transition-all duration-300 ease-out active:scale-95;
+    }
+}
+
+@layer utilities {
+    .bg-brand-gradient {
+        background: radial-gradient(circle at 50% 50%, var(--color-brand-primary), var(--color-brand-secondary));
+    }
+    
+    .text-brand-gradient {
+        background: radial-gradient(circle at 50% 50%, var(--color-brand-primary), var(--color-brand-secondary));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .glass-card {
+        @apply bg-white/70 backdrop-blur-xl border border-white/20 shadow-xl;
+    }
+}
+
+@layer components {
+    @keyframes marqueeScroll {
+        0% {
+            transform: translateX(0%);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+}
