@@ -20,7 +20,9 @@ const Footer = () => {
             links: [
                 { text: "Développement Web", path: '/services' },
                 { text: "UI/UX Design", path: '/services' },
-                { text: "Gestion de Projet", path: '/services' },
+                { text: "Infographie & Branding", path: '/services' },
+                { text: "Sérigraphie Pro", path: '/services' },
+                { text: "Maintenance Informatique", path: '/services' },
             ]
         },
         {
