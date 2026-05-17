@@ -64,7 +64,9 @@ const ProjectCard = ({ project }) => {
                 <h3 className="text-white font-black text-xl tracking-tight leading-tight">{project.name}</h3>
                 <p className="text-brand-primary text-[10px] font-black uppercase tracking-widest mt-2">{category}</p>
                 {projectUrl === "#" && (
-                    <span className="text-white/50 text-[9px] mt-4 font-bold italic">Lien bientôt disponible</span>
+                    <span className="text-white/60 text-[10px] mt-4 font-bold italic leading-tight max-w-[200px]">
+                        Contactez-moi pour avoir des informations sur ce projet
+                    </span>
                 )}
             </div>
         </motion.a>
