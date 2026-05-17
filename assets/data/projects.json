@@ -1,0 +1,134 @@
+[
+    {
+        "name": "Sherifa Parfumerie",
+        "desc": "Maison de parfumerie de luxe sénégalaise spécialisée dans les fragrances exclusives et les huiles précieuses. Une expérience e-commerce fluide avec une direction artistique raffinée.",
+        "image": "sherifa.png",
+        "category": "web",
+        "tech": ["Next.js", "React", "Tailwind CSS", "E-commerce"],
+        "links": {
+            "view": "https://www.sherifaparfumerie.com/",
+            "code": "#"
+        },
+        "status": "En production"
+    },
+    {
+        "name": "Vote Numérique UCAK",
+        "desc": "Système sécurisé de gestion et d’automatisation des élections universitaires, garantissant l'intégrité et la transparence des scrutins.",
+        "image": "placeholder-image.png",
+        "category": "web",
+        "tech": ["Next.js", "PostgreSQL", "Cybersecurity"],
+        "links": {
+            "view": "#",
+            "code": "#"
+        },
+        "status": "Live"
+    },
+    {
+        "name": "Qurratul Ayni",
+        "desc": "Plateforme numérique pédagogique dédiée à la diffusion d'enseignements sacrés. Structure en chapitres pour une navigation intuitive et une étude approfondie.",
+        "image": "qurratul.png",
+        "category": "web",
+        "tech": ["Next.js", "Framer Motion", "Education"],
+        "links": {
+            "view": "https://qurratul-ayni-2a8b.vercel.app/",
+            "code": "#"
+        },
+        "status": "Beta"
+    },
+    {
+        "name": "Babos Photographie",
+        "desc": "Studio professionnel Thiessois proposant un système complet de réservation, une académie de formation et une boutique en ligne pour photographes.",
+        "image": "babos.png",
+        "category": "web",
+        "tech": ["Next.js", "Supabase", "Booking System"],
+        "links": {
+            "view": "https://babos.vercel.app/",
+            "code": "#"
+        },
+        "status": "En ligne"
+    },
+    {
+        "name": "AgriChampion",
+        "desc": "Application de timing et scoring en temps réel pour les compétitions académiques agricoles entre l'ENSA et l'UCAK.",
+        "image": "agrichampion.png",
+        "category": "web",
+        "tech": ["React", "Real-time", "AgriTech"],
+        "links": {
+            "view": "https://agrichampion.vercel.app/",
+            "code": "#"
+        },
+        "status": "Live"
+    },
+    {
+        "name": "Faaris Signature",
+        "desc": "Agence d'événementiel haut de gamme alliant élégance intemporelle et esprit de la Teranga sénégalaise. Portfolio immersif et luxueux.",
+        "image": "faaris.png",
+        "category": "web",
+        "tech": ["Next.js", "Design Premium", "Event"],
+        "links": {
+            "view": "https://faaris.vercel.app/",
+            "code": "#"
+        },
+        "status": "En ligne"
+    },
+    {
+        "name": "PARAR Consulting",
+        "desc": "Cabinet d'ingénierie AgriTech spécialisé dans l'irrigation solaire et les aménagements hydro-agricoles au Sahel.",
+        "image": "parar.png",
+        "category": "web",
+        "tech": ["Next.js", "Corporate", "Engineering"],
+        "links": {
+            "view": "https://parar.vercel.app/",
+            "code": "#"
+        },
+        "status": "En ligne"
+    },
+    {
+        "name": "Gestion Kurel",
+        "desc": "Outil d'administration pour les groupements communautaires, simplifiant la gestion des membres, des activités et de la coordination locale.",
+        "image": "kurel.png",
+        "category": "web",
+        "tech": ["React", "Management Tool"],
+        "links": {
+            "view": "https://gestion-kurel.vercel.app/",
+            "code": "#"
+        },
+        "status": "Beta"
+    },
+    {
+        "name": "Service Agri - Identité Visuelle",
+        "desc": "Conception d'une charte graphique et de supports de communication pour le secteur agricole. Un design épuré alliant nature et innovation.",
+        "image": "serviceagri.png",
+        "category": "design",
+        "tech": ["Canva", "Graphic Design", "Agri-Branding"],
+        "links": {
+            "view": "https://canva.link/2kqnxotkekxcqxl",
+            "code": "#"
+        },
+        "status": "Consultation"
+    },
+    {
+        "name": "Design Institutionnel - UCAK",
+        "desc": "Conception de supports de communication visuelle institutionnels. Un mélange de rigueur académique et de créativité moderne.",
+        "image": "design-ucak.png",
+        "category": "design",
+        "tech": ["Canva", "Graphic Design", "Branding"],
+        "links": {
+            "view": "https://canva.link/dzjavtf39cmqd4h",
+            "code": "#"
+        },
+        "status": "Consultation"
+    },
+    {
+        "name": "GymScore",
+        "desc": "Application de suivi de performance physique permettant l'enregistrement précis et l'analyse des scores sportifs en temps réel.",
+        "image": "gymscore.png",
+        "category": "web",
+        "tech": ["React Native Web", "Fitness"],
+        "links": {
+            "view": "https://gymscore.vercel.app/",
+            "code": "#"
+        },
+        "status": "WIP"
+    }
+]
