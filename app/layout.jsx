@@ -1,10 +1,10 @@
-import { Sora } from "next/font/google";
+import { Outfit } from "next/font/google";
 import { Suspense } from "react";
 import { Toaster } from "react-hot-toast";
 import Analytics from "@/components/Analytics";
 import "./globals.css";
 
-const sora = Sora({ subsets: ["latin"], weight: ["100", "200", "300", "400", "500", "600", "700", "800"] });
+const outfit = Outfit({ subsets: ["latin"], weight: ["400", "500", "600", "900"] });
 
 export const viewport = {
     width: "device-width",
@@ -46,7 +46,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="fr" className="scroll-smooth" data-scroll-behavior="smooth">
-            <body className={`${sora.className} antialiased pb-20 md:pb-0`}>
+            <body className={`${outfit.className} antialiased pb-20 md:pb-0`}>
                 <Toaster />
                 <Suspense fallback={null}>
                     <Analytics />

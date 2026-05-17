@@ -101,7 +101,7 @@ const Hero = () => {
                         transition={{ delay: 0.2, duration: 0.4 }}
                         className='flex-1 group'
                     >
-                        <Link href="/work/design" className='relative flex flex-col justify-end w-full h-full min-h-[300px] bg-slate-50 rounded-none p-10 overflow-hidden transition-all duration-700 hover:shadow-2xl hover:shadow-brand-primary/10 border border-slate-100 hover:border-brand-primary/20'>
+                        <Link href="/work/design" className='relative flex flex-col justify-end w-full h-full min-h-[300px] bg-slate-50 rounded-[3rem] p-10 overflow-hidden transition-all duration-700 hover:shadow-2xl hover:shadow-brand-primary/10 border border-slate-100 hover:border-brand-primary/20'>
                             <div className="absolute inset-0 z-0">
                                 <Image
                                     src="/assets/design-bg.png"
@@ -113,7 +113,7 @@ const Hero = () => {
                             </div>
 
                             <div className="relative z-10">
-                                <span className='inline-block mb-3 px-4 py-1.5 bg-slate-900 text-white text-[9px] font-black uppercase tracking-widest rounded-none'>
+                                <span className='inline-block mb-3 px-4 py-1.5 bg-slate-900 text-white text-[9px] font-black uppercase tracking-widest rounded-full'>
                                     Créativité
                                 </span>
                                 <h3 className='text-3xl font-black text-slate-900 tracking-tighter leading-none mb-4'>
@@ -124,7 +124,7 @@ const Hero = () => {
                                 </div>
                             </div>
 
-                            <div className='absolute top-8 right-8 size-12 rounded-none bg-white shadow-md flex items-center justify-center text-slate-200 group-hover:text-brand-primary group-hover:rotate-45 transition-all duration-500'>
+                            <div className='absolute top-8 right-8 size-12 rounded-2xl bg-white shadow-md flex items-center justify-center text-slate-200 group-hover:text-brand-primary group-hover:rotate-45 transition-all duration-500'>
                                 <PlusIcon size={24} />
                             </div>
                         </Link>
@@ -137,7 +137,7 @@ const Hero = () => {
                         transition={{ delay: 0.3, duration: 0.4 }}
                         className='flex-1 group'
                     >
-                        <Link href="/work/web" className='relative flex flex-col justify-end w-full h-full min-h-[300px] bg-slate-900 rounded-none p-10 overflow-hidden transition-all duration-700 hover:shadow-2xl hover:shadow-brand-primary/20 border border-slate-800 hover:border-brand-primary/40'>
+                        <Link href="/work/web" className='relative flex flex-col justify-end w-full h-full min-h-[300px] bg-slate-900 rounded-[3rem] p-10 overflow-hidden transition-all duration-700 hover:shadow-2xl hover:shadow-brand-primary/20 border border-slate-800 hover:border-brand-primary/40'>
                             <div className="absolute inset-0 z-0">
                                 <Image
                                     src="/assets/projects/sherifa.png"
@@ -149,7 +149,7 @@ const Hero = () => {
                             </div>
 
                             <div className="relative z-10">
-                                <span className='inline-block mb-3 px-4 py-1.5 bg-brand-gradient text-white text-[9px] font-black uppercase tracking-widest rounded-none'>
+                                <span className='inline-block mb-3 px-4 py-1.5 bg-brand-gradient text-white text-[9px] font-black uppercase tracking-widest rounded-full'>
                                     Performance
                                 </span>
                                 <h3 className='text-3xl font-black text-white tracking-tighter leading-none mb-4'>
@@ -160,7 +160,7 @@ const Hero = () => {
                                 </div>
                             </div>
 
-                            <div className='absolute top-8 right-8 size-12 rounded-none bg-white/10 backdrop-blur-md flex items-center justify-center text-white/20 group-hover:text-brand-primary group-hover:rotate-90 transition-all duration-500'>
+                            <div className='absolute top-8 right-8 size-12 rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center text-white/20 group-hover:text-brand-primary group-hover:rotate-90 transition-all duration-500'>
                                 <ZapIcon size={24} fill="currentColor" />
                             </div>
                         </Link>
