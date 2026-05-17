@@ -21,7 +21,7 @@ const ProjectCard = ({ project }) => {
             animate={{ opacity: 1, scale: 1 }}
             whileHover={{ y: -5, scale: 1.02 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className='group relative w-full aspect-[4/3] bg-slate-100 rounded-[2.5rem] overflow-hidden shadow-xl cursor-pointer block'
+            className='group relative w-full aspect-[4/3] bg-slate-100 rounded-none overflow-hidden shadow-xl cursor-pointer block'
         >
             {/* Project Image or Branded Fallback */}
             {!imgError && !isPlaceholder ? (
@@ -41,7 +41,7 @@ const ProjectCard = ({ project }) => {
                     </div>
                     
                     <div className="relative z-10">
-                        <div className="size-16 bg-white/20 backdrop-blur-md rounded-3xl flex items-center justify-center text-white mb-6 mx-auto border border-white/20 shadow-2xl">
+                        <div className="size-16 bg-white/20 backdrop-blur-md rounded-none flex items-center justify-center text-white mb-6 mx-auto border border-white/20 shadow-2xl">
                             <span className="text-3xl font-black">
                                 {project.name.charAt(0)}
                             </span>
