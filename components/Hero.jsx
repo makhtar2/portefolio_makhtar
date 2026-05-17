@@ -107,9 +107,9 @@ const Hero = () => {
                                     src="/assets/design-bg.png"
                                     alt="Design"
                                     fill
-                                    className="object-cover opacity-60 group-hover:scale-110 transition-all duration-1000 ease-out"
+                                    className="object-cover opacity-40 blur-[3px] group-hover:scale-110 group-hover:blur-[1px] transition-all duration-1000 ease-out"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent" />
                             </div>
 
                             <div className="relative z-10">
@@ -143,9 +143,9 @@ const Hero = () => {
                                     src="/assets/projects/sherifa.png"
                                     alt="Web"
                                     fill
-                                    className="object-cover opacity-70 group-hover:scale-110 transition-all duration-1000 ease-out"
+                                    className="object-cover opacity-50 blur-[3px] brightness-50 group-hover:scale-110 group-hover:blur-[1px] group-hover:brightness-75 transition-all duration-1000 ease-out"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent" />
                             </div>
 
                             <div className="relative z-10">
