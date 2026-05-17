@@ -47,7 +47,7 @@ const Footer = () => {
                     {/* Brand Info */}
                     <div className="lg:col-span-5">
                         <Link href="/" className="text-3xl font-black text-slate-900 tracking-tighter">
-                            Makhtar Wade<span className="text-brand-primary">.</span>
+                            AlmuxtaarDev<span className="text-brand-primary">.</span>
                         </Link>
                         <p className="mt-6 text-slate-500 font-medium text-sm leading-relaxed max-w-sm">
                             Développeur Full Stack & Designer passionné par la création d'expériences numériques innovantes basées à Touba, Thiès et Dakar.
@@ -91,7 +91,7 @@ const Footer = () => {
                 {/* Bottom Footer */}
                 <div className="py-10 border-t border-slate-50 flex flex-col sm:flex-row justify-between items-center gap-6">
                     <p className="text-[11px] font-black text-slate-400 tracking-tight uppercase tracking-[0.2em]">
-                        © 2026 MAKHTAR WADE. TOUS DROITS RÉSERVÉS.
+                        © 2026 ALMUXTAARDEV. TOUS DROITS RÉSERVÉS.
                     </p>
                     <div className="flex items-center gap-8 text-[11px] font-black text-slate-400 uppercase tracking-widest">
                          <Link href="/contact" className="hover:text-brand-primary transition-colors">Contact</Link>

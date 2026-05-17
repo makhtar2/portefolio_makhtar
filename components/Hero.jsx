@@ -39,7 +39,7 @@ const Hero = () => {
                             transition={{ delay: 0.5, duration: 0.8 }}
                             className='text-4xl sm:text-6xl lg:text-7xl leading-[1.1] my-6 sm:my-8 font-black tracking-tighter text-slate-900'
                         >
-                            Makhtar Wade : Développeur & <span className='text-brand-gradient'>Designer.</span>
+                            AlmuxtaarDev : Développeur & <span className='text-brand-gradient'>Designer.</span>
                         </motion.h2>
 
                         <motion.p 

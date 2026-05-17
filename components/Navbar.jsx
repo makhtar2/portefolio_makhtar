@@ -22,11 +22,8 @@ const Navbar = () => {
                     <div className="flex justify-between items-center h-16 sm:h-24">
                         {/* Logo */}
                         <Link href="/" className="flex items-center gap-2 group">
-                            <div className="size-10 sm:size-12 bg-brand-gradient rounded-2xl flex items-center justify-center text-white shadow-xl shadow-brand-primary/20 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
-                                <span className="font-black text-xl">M</span>
-                            </div>
                             <span className="text-xl sm:text-2xl font-black text-slate-900 tracking-tighter">
-                                Makhtar<span className="text-brand-primary">.</span>
+                                AlmuxtaarDev<span className="text-brand-primary">.</span>
                             </span>
                         </Link>
 
