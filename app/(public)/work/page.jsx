@@ -50,7 +50,7 @@ export default function WorkHubPage() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <Link href="/work/web" className="group relative block aspect-[16/10] sm:aspect-video lg:aspect-auto lg:h-[600px] bg-white rounded-[3.5rem] overflow-hidden shadow-2xl transition-all duration-700 hover:shadow-brand-primary/10 border border-slate-100">
+                        <Link href="/work/web" className="group relative block aspect-[16/10] sm:aspect-video lg:aspect-auto lg:h-[600px] bg-white rounded-3xl lg:rounded-[3.5rem] overflow-hidden shadow-2xl transition-all duration-700 hover:shadow-brand-primary/10 border border-slate-100">
                             <div className="absolute inset-0 z-0">
                                 <Image 
                                     src="/assets/projects/sherifa.png" 
@@ -61,7 +61,7 @@ export default function WorkHubPage() {
                                 <div className="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent" />
                             </div>
                             
-                            <div className="absolute inset-0 p-10 sm:p-16 flex flex-col justify-end">
+                            <div className="absolute inset-0 p-10 sm:p-16 flex flex-col items-center lg:items-start justify-center lg:justify-end text-center lg:text-left">
                                 <div className="size-16 sm:size-20 bg-slate-900 text-white rounded-[2rem] flex items-center justify-center mb-8 shadow-2xl group-hover:bg-brand-primary transition-all duration-500 group-hover:rotate-6">
                                     <CodeIcon size={32} />
                                 </div>
@@ -81,7 +81,7 @@ export default function WorkHubPage() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                     >
-                        <Link href="/work/design" className="group relative block aspect-[16/10] sm:aspect-video lg:aspect-auto lg:h-[600px] bg-brand-primary rounded-[3.5rem] overflow-hidden shadow-2xl transition-all duration-700 hover:shadow-brand-secondary/20 border border-brand-primary/10">
+                        <Link href="/work/design" className="group relative block aspect-[16/10] sm:aspect-video lg:aspect-auto lg:h-[600px] bg-brand-primary rounded-3xl lg:rounded-[3.5rem] overflow-hidden shadow-2xl transition-all duration-700 hover:shadow-brand-secondary/20 border border-brand-primary/10">
                             <div className="absolute inset-0 z-0">
                                 <Image 
                                     src="/assets/projects/babos.png" 
@@ -92,7 +92,7 @@ export default function WorkHubPage() {
                                 <div className="absolute inset-0 bg-gradient-to-t from-brand-secondary/90 via-brand-primary/20 to-transparent" />
                             </div>
                             
-                            <div className="absolute inset-0 p-10 sm:p-16 flex flex-col justify-end">
+                            <div className="absolute inset-0 p-10 sm:p-16 flex flex-col items-center lg:items-start justify-center lg:justify-end text-center lg:text-left">
                                 <div className="size-16 sm:size-20 bg-white text-brand-primary rounded-[2rem] flex items-center justify-center mb-8 shadow-2xl group-hover:-rotate-6 transition-all duration-500">
                                     <PaletteIcon size={32} />
                                 </div>

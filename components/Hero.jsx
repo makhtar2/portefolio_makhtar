@@ -101,7 +101,7 @@ const Hero = () => {
                         transition={{ delay: 0.2, duration: 0.4 }}
                         className='flex-1 group'
                     >
-                        <Link href="/work/design" className='relative flex flex-col justify-end w-full h-full min-h-[300px] bg-slate-50 rounded-[3rem] p-10 overflow-hidden transition-all duration-700 hover:shadow-2xl hover:shadow-brand-primary/10 border border-slate-100 hover:border-brand-primary/20'>
+                        <Link href="/work/design" className='relative flex flex-col justify-end w-full h-full min-h-[300px] bg-slate-50 rounded-3xl md:rounded-[3rem] p-10 overflow-hidden transition-all duration-700 hover:shadow-2xl hover:shadow-brand-primary/10 border border-slate-100 hover:border-brand-primary/20'>
                             <div className="absolute inset-0 z-0">
                                 <Image
                                     src="/assets/design-bg.png"
@@ -112,20 +112,20 @@ const Hero = () => {
                                 <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent" />
                             </div>
 
-                            <div className="relative z-10">
+                            <div className="relative z-10 flex flex-col items-center xl:items-start text-center xl:text-left">
                                 <span className='inline-block mb-3 px-4 py-1.5 bg-slate-900 text-white text-[9px] font-black uppercase tracking-widest rounded-full'>
                                     Créativité
                                 </span>
                                 <h3 className='text-3xl font-black text-slate-900 tracking-tighter leading-none mb-4'>
-                                    Design <br /> Graphique
+                                    Design <br className="hidden xl:block" /> Graphique
                                 </h3>
                                 <div className='flex items-center gap-2 font-black text-brand-secondary uppercase text-[11px] tracking-widest group-hover:translate-x-2 transition-all duration-300'>
                                     Portfolio <ArrowRightIcon size={16} /> 
                                 </div>
                             </div>
 
-                            <div className='absolute top-8 right-8 size-12 rounded-2xl bg-white shadow-md flex items-center justify-center text-slate-200 group-hover:text-brand-primary group-hover:rotate-45 transition-all duration-500'>
-                                <PlusIcon size={24} />
+                            <div className='absolute top-6 right-6 xl:top-8 xl:right-8 size-10 xl:size-12 rounded-xl xl:rounded-2xl bg-white shadow-md flex items-center justify-center text-slate-200 group-hover:text-brand-primary group-hover:rotate-45 transition-all duration-500'>
+                                <PlusIcon size={20} />
                             </div>
                         </Link>
                     </motion.div>
@@ -137,7 +137,7 @@ const Hero = () => {
                         transition={{ delay: 0.3, duration: 0.4 }}
                         className='flex-1 group'
                     >
-                        <Link href="/work/web" className='relative flex flex-col justify-end w-full h-full min-h-[300px] bg-slate-900 rounded-[3rem] p-10 overflow-hidden transition-all duration-700 hover:shadow-2xl hover:shadow-brand-primary/20 border border-slate-800 hover:border-brand-primary/40'>
+                        <Link href="/work/web" className='relative flex flex-col justify-end w-full h-full min-h-[300px] bg-slate-900 rounded-3xl md:rounded-[3rem] p-10 overflow-hidden transition-all duration-700 hover:shadow-2xl hover:shadow-brand-primary/20 border border-slate-800 hover:border-brand-primary/40'>
                             <div className="absolute inset-0 z-0">
                                 <Image
                                     src="/assets/projects/sherifa.png"
@@ -148,20 +148,20 @@ const Hero = () => {
                                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent" />
                             </div>
 
-                            <div className="relative z-10">
+                            <div className="relative z-10 flex flex-col items-center xl:items-start text-center xl:text-left">
                                 <span className='inline-block mb-3 px-4 py-1.5 bg-brand-gradient text-white text-[9px] font-black uppercase tracking-widest rounded-full'>
                                     Performance
                                 </span>
                                 <h3 className='text-3xl font-black text-white tracking-tighter leading-none mb-4'>
-                                    Développement <br /> Web
+                                    Développement <br className="hidden xl:block" /> Web
                                 </h3>
                                 <div className='flex items-center gap-2 font-black text-brand-primary uppercase text-[11px] tracking-widest group-hover:translate-x-2 transition-all duration-300'>
                                     Projets <ArrowRightIcon size={16} /> 
                                 </div>
                             </div>
 
-                            <div className='absolute top-8 right-8 size-12 rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center text-white/20 group-hover:text-brand-primary group-hover:rotate-90 transition-all duration-500'>
-                                <ZapIcon size={24} fill="currentColor" />
+                            <div className='absolute top-6 right-6 xl:top-8 xl:right-8 size-10 xl:size-12 rounded-xl xl:rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center text-white/20 group-hover:text-brand-primary group-hover:rotate-90 transition-all duration-500'>
+                                <ZapIcon size={20} fill="currentColor" />
                             </div>
                         </Link>
                     </motion.div>

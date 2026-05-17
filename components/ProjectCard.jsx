@@ -19,7 +19,7 @@ const ProjectCard = ({ project }) => {
             animate={{ opacity: 1, scale: 1 }}
             whileHover={{ y: -5, scale: 1.02 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className='group relative w-full aspect-[4/3] bg-slate-100 rounded-[2.5rem] overflow-hidden shadow-xl cursor-pointer block'
+            className='group relative w-full aspect-[4/3] bg-slate-100 rounded-3xl sm:rounded-[2.5rem] overflow-hidden shadow-xl cursor-pointer block'
         >
             <Image 
                 fill

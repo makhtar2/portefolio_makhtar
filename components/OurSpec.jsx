@@ -19,10 +19,10 @@ const OurSpecs = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.05, duration: 0.4 }}
-                                className='relative p-8 sm:p-12 flex flex-col items-start justify-center w-full border border-slate-100 rounded-[3rem] group transition-all duration-500 hover:shadow-2xl hover:shadow-brand-primary/5 bg-white' 
+                                className='relative p-8 sm:p-12 flex flex-col items-center sm:items-start justify-center text-center sm:text-left w-full border border-slate-100 rounded-3xl sm:rounded-[3rem] group transition-all duration-500 hover:shadow-2xl hover:shadow-brand-primary/5 bg-white' 
                                 key={index}
                             >
-                                <div className='mb-8 p-5 text-white rounded-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg' style={{ background: 'var(--brand-gradient, radial-gradient(circle at 50% 50%, #d9a54e, #c2773a))', boxShadow: `#d9a54e40 0px 10px 30px` }}>
+                                <div className='mb-8 p-5 text-white rounded-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg mx-auto sm:mx-0' style={{ background: 'var(--brand-gradient, radial-gradient(circle at 50% 50%, #d9a54e, #c2773a))', boxShadow: `#d9a54e40 0px 10px 30px` }}>
                                     <spec.icon size={28} />
                                 </div>
                                 <h3 className='text-slate-900 font-black text-2xl mb-4 tracking-tight group-hover:text-brand-primary transition-colors'>{spec.title}</h3>
