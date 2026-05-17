@@ -18,12 +18,12 @@ const ProjectCard = ({ project }) => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             whileHover={{ y: -5, scale: 1.02 }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
             className='group relative w-full aspect-[4/3] bg-slate-100 rounded-[2.5rem] overflow-hidden shadow-xl cursor-pointer block'
         >
             <Image 
                 fill
-                className='object-cover transition-transform duration-700 group-hover:scale-110' 
+                className='object-cover transition-transform duration-500 group-hover:scale-110' 
                 src={imagePath} 
                 alt={project.name} 
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"

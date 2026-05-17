@@ -19,14 +19,14 @@ const Hero = () => {
                 <motion.div 
                     initial={{ opacity: 0, scale: 0.98 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                    transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                     className='relative flex-[1.5] flex flex-col bg-brand-primary/5 rounded-[2.5rem] group overflow-hidden border border-brand-primary/10'
                 >
                     <div className='p-8 sm:p-16 lg:p-20 z-10'>
                         <motion.div 
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: 0.3, duration: 0.6 }}
+                            transition={{ delay: 0.1, duration: 0.4 }}
                             className='inline-flex items-center gap-2 sm:gap-3 bg-white/80 border border-brand-primary/20 text-brand-secondary pr-4 p-1 rounded-full text-[10px] sm:text-xs backdrop-blur-sm shadow-sm'
                         >
                             <span className='bg-brand-gradient px-2 sm:px-3 py-1 rounded-full text-white text-[10px] font-black'>DISPONIBLE</span> 
@@ -36,7 +36,7 @@ const Hero = () => {
                         <motion.h2 
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.5, duration: 0.8 }}
+                            transition={{ delay: 0.2, duration: 0.5 }}
                             className='text-4xl sm:text-6xl lg:text-7xl leading-[1.1] my-6 sm:my-8 font-black tracking-tighter text-slate-900'
                         >
                             AlmuxtaarDev : Développeur & <span className='text-brand-gradient'>Designer.</span>
@@ -45,7 +45,7 @@ const Hero = () => {
                         <motion.p 
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
-                            transition={{ delay: 0.7, duration: 0.8 }}
+                            transition={{ delay: 0.3, duration: 0.5 }}
                             className='text-slate-500 font-bold text-base sm:text-xl leading-relaxed max-w-md mb-10'
                         >
                             Passionné par la création d'expériences numériques innovantes et d'identités visuelles percutantes.
@@ -55,7 +55,7 @@ const Hero = () => {
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.9, duration: 0.5 }}
+                            transition={{ delay: 0.4, duration: 0.4 }}
                             className='flex flex-col sm:flex-row gap-4'
                         >
                             <button 
@@ -78,7 +78,7 @@ const Hero = () => {
                     <motion.div 
                         initial={{ opacity: 0, x: 100 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.6, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+                        transition={{ delay: 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                         className='relative xl:absolute bottom-0 right-0 xl:right-4 w-full xl:w-[45%] flex justify-center items-end mt-8 xl:mt-0 select-none pointer-events-none'
                     >
                         <Image 
@@ -98,7 +98,7 @@ const Hero = () => {
                     <motion.div
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.4, duration: 0.6 }}
+                        transition={{ delay: 0.2, duration: 0.4 }}
                         className='flex-1 group'
                     >
                         <Link href="/work/design" className='relative flex flex-col justify-end w-full h-full min-h-[300px] bg-slate-50 rounded-[3rem] p-10 overflow-hidden transition-all duration-700 hover:shadow-2xl hover:shadow-brand-primary/10 border border-slate-100 hover:border-brand-primary/20'>
@@ -134,7 +134,7 @@ const Hero = () => {
                     <motion.div
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.6, duration: 0.6 }}
+                        transition={{ delay: 0.3, duration: 0.4 }}
                         className='flex-1 group'
                     >
                         <Link href="/work/web" className='relative flex flex-col justify-end w-full h-full min-h-[300px] bg-slate-900 rounded-[3rem] p-10 overflow-hidden transition-all duration-700 hover:shadow-2xl hover:shadow-brand-primary/20 border border-slate-800 hover:border-brand-primary/40'>
@@ -172,7 +172,7 @@ const Hero = () => {
             <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1, duration: 0.8 }}
+                transition={{ delay: 0.5, duration: 0.5 }}
             >
                 <CategoriesMarquee categories={skills} />
             </motion.div>
