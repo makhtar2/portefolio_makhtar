@@ -32,7 +32,7 @@ export const metadata = {
         siteName: 'AlmuxtaarDev Portfolio',
         images: [
             {
-                url: '/assets/images/profile.jpeg',
+                url: '/profile.jpeg',
                 width: 1200,
                 height: 630,
                 alt: 'AlmuxtaarDev - Développeur Full Stack & Designer',
@@ -45,7 +45,7 @@ export const metadata = {
         card: 'summary_large_image',
         title: "AlmuxtaarDev | Développeur Full Stack & Designer",
         description: "Transformez vos idées en réalités digitales premium.",
-        images: ['/assets/images/profile.jpeg'],
+        images: ['/profile.jpeg'],
     },
 };
 
