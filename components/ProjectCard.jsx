@@ -14,66 +14,79 @@ const ProjectCard = ({ project }) => {
     const imagePath = imageName?.startsWith('http') ? imageName : `/assets/projects/${imageName}`;
     const projectUrl = project.site_url || project.links?.view || "#";
     const projectName = project.name || "Projet Sans Nom";
+    const description = project.description || project.desc || "Découvrez ce projet innovant.";
 
     return (
-        <motion.a 
-            href={projectUrl}
-            target={projectUrl !== "#" ? "_blank" : "_self"}
-            rel="noopener noreferrer"
-            layout
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            whileHover={{ y: -5, scale: 1.02 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-            className='group relative w-full aspect-[4/3] bg-slate-100 rounded-3xl sm:rounded-[2.5rem] overflow-hidden shadow-xl cursor-pointer block'
+        <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className='group bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-xl shadow-slate-200/40 hover:shadow-2xl hover:shadow-brand-primary/10 transition-all duration-500'
         >
-            {/* Project Image or Branded Fallback */}
-            {!imgError && !isPlaceholder ? (
-                <Image 
-                    fill
-                    className='object-cover transition-transform duration-500 group-hover:scale-110' 
-                    src={imagePath} 
-                    alt={projectName} 
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
-                    onError={() => setImgError(true)}
-                />
-            ) : (
-                <div className="absolute inset-0 bg-brand-gradient flex flex-col items-center justify-center p-8 text-center overflow-hidden">
-                    {/* Decorative Background Icon */}
-                    <div className="absolute -bottom-4 -right-4 opacity-10 text-white transform rotate-12">
-                        <ImageOffIcon size={200} strokeWidth={1} />
-                    </div>
-
-                    <div className="relative z-10">
-                        <div className="size-16 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center text-white mb-6 mx-auto border border-white/20 shadow-2xl">
-                            <span className="text-3xl font-black">
+            {/* Image Section */}
+            <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
+                {!imgError && !isPlaceholder ? (
+                    <Image 
+                        fill
+                        className='object-cover transition-transform duration-700 group-hover:scale-105' 
+                        src={imagePath} 
+                        alt={projectName} 
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
+                        onError={() => setImgError(true)}
+                    />
+                ) : (
+                    <div className="absolute inset-0 bg-brand-gradient flex flex-col items-center justify-center p-8 text-center">
+                        <div className="size-12 bg-white/20 backdrop-blur-md rounded-xl flex items-center justify-center text-white mb-4 border border-white/20">
+                            <span className="text-xl font-black">
                                 {projectName.charAt(0)}
                             </span>
                         </div>
-                        <h3 className="text-white font-black text-2xl sm:text-3xl tracking-tighter leading-[1.1] mb-2 uppercase italic drop-shadow-lg">
+                        <h3 className="text-white font-black text-xl tracking-tighter leading-tight uppercase italic">
                             {projectName}
                         </h3>
-                        <p className="text-white/70 text-[10px] font-black uppercase tracking-[0.3em]">
-                            En développement
-                        </p>
                     </div>
-                </div>
-            )}
-            
-            {/* Visual indicator on hover */}
-            <div className="absolute inset-0 bg-slate-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center p-6 text-center backdrop-blur-[2px] z-20">
-                <div className="size-14 bg-brand-primary/20 backdrop-blur-md rounded-full flex items-center justify-center text-white mb-4 border border-white/10">
-                    <ExternalLinkIcon size={24} />
-                </div>
-                <h3 className="text-white font-black text-xl tracking-tight leading-tight">{projectName}</h3>
-                <p className="text-brand-primary text-[10px] font-black uppercase tracking-widest mt-2">{category}</p>
-                {projectUrl === "#" && (
-                    <span className="text-white/60 text-[10px] mt-4 font-bold italic leading-tight max-w-[200px]">
-                        Contactez-moi pour avoir des informations sur ce projet
-                    </span>
                 )}
+                
+                {/* Category Badge */}
+                <div className="absolute top-6 left-6">
+                    <span className="px-4 py-2 bg-white/90 backdrop-blur-md text-slate-900 text-[10px] font-black uppercase tracking-widest rounded-full border border-white/20 shadow-lg">
+                        {category}
+                    </span>
+                </div>
             </div>
-        </motion.a>
+
+            {/* Content Section */}
+            <div className="p-8 sm:p-10 flex flex-col h-full">
+                <div className="flex-1 mb-8">
+                    <h3 className="text-2xl font-black text-slate-900 tracking-tighter uppercase italic leading-none mb-4 group-hover:text-brand-primary transition-colors">
+                        {projectName}
+                    </h3>
+                    <p className="text-slate-500 text-sm font-medium leading-relaxed line-clamp-3">
+                        {description}
+                    </p>
+                </div>
+
+                {/* Action Link */}
+                <div className="mt-auto">
+                    {projectUrl !== "#" ? (
+                        <a 
+                            href={projectUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-3 bg-slate-900 text-white px-8 py-4 rounded-2xl font-black text-[10px] uppercase tracking-[0.2em] hover:bg-brand-gradient transition-all shadow-xl shadow-slate-900/10 active:scale-95 group/btn"
+                        >
+                            Voir le projet
+                            <ExternalLinkIcon size={14} className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                        </a>
+                    ) : (
+                        <span className="inline-flex items-center gap-3 bg-slate-50 text-slate-400 px-8 py-4 rounded-2xl font-black text-[10px] uppercase tracking-[0.2em] cursor-help italic">
+                            Projet Privé
+                        </span>
+                    )}
+                </div>
+            </div>
+        </motion.div>
     )
 }
 
