@@ -4,25 +4,24 @@ import { NextResponse } from 'next/server'
 export async function proxy(request) {
   const { supabaseResponse } = await updateSession(request)
   
-  // Security Headers
-  const cspHeader = `
-    default-src 'self';
-    script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.supabase.co;
-    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-    img-src 'self' blob: data: https://*.supabase.co https://res.cloudinary.com https://wa.me;
-    font-src 'self' data: https://fonts.gstatic.com;
-    object-src 'none';
-    base-uri 'self';
-    form-action 'self';
-    frame-ancestors 'none';
-    connect-src 'self' https://*.supabase.co wss://*.supabase.co;
-  `.replace(/\s{2,}/g, ' ').trim()
+  // Auth check disabled for debugging
+  /*
+  if (supabase) {
+    const { data: { user } } = await supabase.auth.getUser()
 
-  supabaseResponse.headers.set('Content-Security-Policy', cspHeader)
+    if (request.nextUrl.pathname.startsWith('/admin') && !user) {
+      return NextResponse.redirect(new URL('/login', request.url))
+    }
+
+    if (request.nextUrl.pathname === '/login' && user) {
+      return NextResponse.redirect(new URL('/admin', request.url))
+    }
+  }
+  */
+
+  // Security Headers (Simplified for debugging)
   supabaseResponse.headers.set('X-Frame-Options', 'DENY')
   supabaseResponse.headers.set('X-Content-Type-Options', 'nosniff')
-  supabaseResponse.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin')
-  supabaseResponse.headers.set('X-XSS-Protection', '1; mode=block')
   
   return supabaseResponse
 }

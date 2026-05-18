@@ -1,17 +1,15 @@
-'use client'
 import React from 'react'
 import Title from '@/components/Title'
 import Image from 'next/image'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
 import { ArrowRightIcon, CodeIcon, PaletteIcon, SparklesIcon } from 'lucide-react'
 import LatestProjects from '@/components/LatestProjects'
-import projectsData from "@/assets/data/projects.json"
+import { getProjects } from "@/lib/supabase/public"
+import * as motion from "framer-motion/client"
 
-export default function WorkHubPage() {
-    
-    // Featured projects to show on hub
-    const featuredProjects = projectsData.slice(0, 3);
+export default async function WorkHubPage() {
+    const projects = await getProjects();
+    const featuredProjects = projects.slice(0, 3);
 
     return (
         <div className="pb-24">

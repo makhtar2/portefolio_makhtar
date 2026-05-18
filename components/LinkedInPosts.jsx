@@ -1,113 +1,128 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { motion } from 'framer-motion'
-import { LinkedinIcon, ExternalLinkIcon, CalendarIcon } from 'lucide-react'
+import { 
+    ThumbsUp, 
+    MessageSquare, 
+    Repeat2, 
+    Send, 
+    MoreHorizontal, 
+    Globe2,
+    Linkedin
+} from 'lucide-react'
 import Title from './Title'
-import { createPublicClient } from '@/lib/supabase/public'
 
-const LinkedInPosts = () => {
-    const [posts, setPosts] = useState([]);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        const fetchPosts = async () => {
-            try {
-                const supabase = createPublicClient();
-                if (!supabase) throw new Error("Supabase not configured");
-
-                const { data, error } = await supabase
-                    .from('linkedin_posts')
-                    .select('*')
-                    .order('published_at', { ascending: false })
-                    .limit(4);
-                
-                if (error) throw error;
-                if (data) setPosts(data);
-            } catch (err) {
-                console.warn("Using mock LinkedIn data:", err.message);
-                // Fallback to mock data if DB fails
-                setPosts([
-                    {
-                        id: 1,
-                        title: "Lancement de ma nouvelle startup JULO 🚀",
-                        content: "Très fier de vous présenter JULO, une solution innovante pour l'automatisation des processus métiers au Sénégal...",
-                        url: "https://linkedin.com",
-                        published_at: "2026-05-15",
-                        image_url: "/assets/projects/sherifa.png"
-                    },
-                    {
-                        id: 2,
-                        title: "Retour sur mon expérience à l'UCAK 🎓",
-                        content: "Une année riche en défis techniques et en apprentissages au sein du département informatique...",
-                        url: "https://linkedin.com",
-                        published_at: "2026-05-10",
-                        image_url: "/assets/projects/babos.png"
-                    }
-                ]);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchPosts();
-    }, []);
-
-    if (!loading && posts.length === 0) return null;
+const LinkedInPosts = ({ posts = [] }) => {
+    if (posts.length === 0) return null;
 
     return (
         <section className='px-6 my-24 max-w-7xl mx-auto'>
             <Title 
-                title="Actualités & Partages" 
-                description="Retrouvez mes dernières réflexions, succès et partages d'expérience sur LinkedIn."
+                title="Actualités LinkedIn" 
+                description="Suivez mes derniers partages et réflexions directement depuis mon flux professionnel."
                 visibleButton={false}
             />
 
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-8 mt-16'>
+            <div className='grid grid-cols-1 lg:grid-cols-3 gap-6 mt-16'>
                 {posts.map((post, index) => (
-                    <motion.a
+                    <motion.div
                         key={post.id}
-                        href={post.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.1 }}
-                        className='group relative flex flex-col sm:flex-row bg-white border border-slate-100 rounded-[2.5rem] overflow-hidden hover:shadow-2xl hover:shadow-brand-primary/5 transition-all duration-500'
+                        className='bg-white border border-slate-200 rounded-xl overflow-hidden flex flex-col shadow-sm hover:shadow-md transition-shadow'
                     >
-                        {/* Image side */}
-                        <div className='relative w-full sm:w-48 h-48 sm:h-auto overflow-hidden bg-slate-100'>
-                            <img 
-                                src={post.image_url || "/assets/projects/placeholder-image.png"} 
-                                alt={post.title}
-                                className='w-full h-full object-cover transition-transform duration-700 group-hover:scale-110'
-                            />
-                            <div className='absolute top-4 left-4 size-10 bg-white/90 backdrop-blur-md rounded-xl flex items-center justify-center text-[#0077b5] shadow-lg'>
-                                <LinkedinIcon size={20} fill="currentColor" />
-                            </div>
-                        </div>
-
-                        {/* Content side */}
-                        <div className='flex-1 p-8 flex flex-col justify-between'>
-                            <div>
-                                <div className='flex items-center gap-2 text-slate-400 text-[10px] font-black uppercase tracking-widest mb-4'>
-                                    <CalendarIcon size={12} />
-                                    {new Date(post.published_at).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}
+                        {/* Header */}
+                        <div className="p-4 flex items-start justify-between">
+                            <div className="flex gap-3">
+                                <div className="size-12 rounded-full bg-slate-100 overflow-hidden border border-slate-100 shrink-0">
+                                    <img src="/assets/hero-main.png" alt="Almuxtaar" className="w-full h-full object-cover" />
                                 </div>
-                                <h3 className='text-xl font-black text-slate-900 tracking-tight leading-tight mb-3 group-hover:text-brand-primary transition-colors'>
-                                    {post.title}
-                                </h3>
-                                <p className='text-slate-500 text-sm font-bold line-clamp-3 leading-relaxed'>
-                                    {post.content}
-                                </p>
+                                <div>
+                                    <h4 className="font-black text-slate-900 text-sm tracking-tight flex items-center gap-1">
+                                        AlmuxtaarDev <span className="text-slate-400 font-medium">• 1er</span>
+                                    </h4>
+                                    <p className="text-[11px] text-slate-500 font-bold leading-tight line-clamp-1">
+                                        Développeur Full Stack | UI/UX Designer | JULO
+                                    </p>
+                                    <p className="text-[10px] text-slate-400 font-bold mt-0.5 flex items-center gap-1 uppercase tracking-tighter">
+                                        {new Date(post.published_at).toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' })} • <Globe2 size={10} />
+                                    </p>
+                                </div>
                             </div>
-
-                            <div className='mt-6 flex items-center gap-2 text-brand-secondary font-black text-[10px] uppercase tracking-widest group-hover:gap-4 transition-all'>
-                                Lire le post <ExternalLinkIcon size={14} />
-                            </div>
+                            <button className="text-slate-400 hover:text-slate-600">
+                                <MoreHorizontal size={20} />
+                            </button>
                         </div>
-                    </motion.a>
+
+                        {/* Text Content */}
+                        <div className="px-4 pb-4">
+                            <p className="text-sm text-slate-800 font-medium leading-relaxed line-clamp-4">
+                                <span className="font-black block mb-1">{post.title}</span>
+                                {post.content}
+                            </p>
+                        </div>
+
+                        {/* Media Content */}
+                        {post.image_url && (
+                            <a href={post.url} target="_blank" rel="noopener noreferrer" className="relative aspect-video w-full bg-slate-50 border-y border-slate-100 overflow-hidden block">
+                                <img 
+                                    src={post.image_url} 
+                                    alt={post.title} 
+                                    className="w-full h-full object-cover"
+                                />
+                            </a>
+                        )}
+
+                        {/* Footer / Interactions */}
+                        <div className="p-1 px-4 border-t border-slate-50 flex items-center justify-between">
+                            <div className="flex -space-x-1 py-3">
+                                <div className="size-4 bg-blue-500 rounded-full border border-white flex items-center justify-center text-[8px] text-white">
+                                    <ThumbsUp size={8} fill="currentColor" />
+                                </div>
+                                <div className="size-4 bg-red-500 rounded-full border border-white flex items-center justify-center text-[8px] text-white">
+                                    ❤️
+                                </div>
+                                <span className="pl-3 text-[11px] font-bold text-slate-500">24</span>
+                            </div>
+                            <span className="text-[11px] font-bold text-slate-500 hover:text-blue-600 hover:underline cursor-pointer">
+                                4 commentaires
+                            </span>
+                        </div>
+
+                        <div className="px-2 pb-2 flex border-t border-slate-50">
+                            {[
+                                { icon: ThumbsUp, label: 'J\'aime' },
+                                { icon: MessageSquare, label: 'Commenter' },
+                                { icon: Repeat2, label: 'Republier' },
+                                { icon: Send, label: 'Envoyer' }
+                            ].map((action, i) => (
+                                <a 
+                                    key={i}
+                                    href={post.url}
+                                    target="_blank"
+                                    className="flex-1 flex flex-col items-center justify-center py-3 gap-1 hover:bg-slate-50 rounded-lg transition-colors group"
+                                >
+                                    <action.icon size={18} className="text-slate-500 group-hover:text-blue-600" />
+                                    <span className="text-[9px] font-black text-slate-500 uppercase tracking-tighter group-hover:text-blue-600">
+                                        {action.label}
+                                    </span>
+                                </a>
+                            ))}
+                        </div>
+                    </motion.div>
                 ))}
+            </div>
+            
+            <div className="mt-12 text-center">
+                <a 
+                    href="https://linkedin.com/in/makhtar-wade-julo" 
+                    target="_blank"
+                    className="inline-flex items-center gap-2 text-[#0077b5] font-black text-sm uppercase tracking-widest hover:underline"
+                >
+                    <Linkedin size={18} fill="currentColor" /> Voir tout sur LinkedIn
+                </a>
             </div>
         </section>
     )

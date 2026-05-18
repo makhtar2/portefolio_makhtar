@@ -48,9 +48,9 @@ export default function RootLayout({ children }) {
         <html lang="fr" className="scroll-smooth" data-scroll-behavior="smooth">
             <body className={`${outfit.className} antialiased pb-20 md:pb-0`}>
                 <Toaster />
-                <Suspense fallback={null}>
+                {/* <Suspense fallback={null}>
                     <Analytics />
-                </Suspense>
+                </Suspense> */}
                 {children}
             </body>
         </html>

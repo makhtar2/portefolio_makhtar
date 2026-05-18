@@ -2,17 +2,20 @@ import Hero from "@/components/Hero";
 import LatestProjects from "@/components/LatestProjects";
 import OurSpecs from "@/components/OurSpec";
 import LinkedInPosts from "@/components/LinkedInPosts";
-import projectsData from "@/assets/data/projects.json";
+import { getProjects, getLinkedInPosts } from "@/lib/supabase/public";
 import Link from "next/link";
 
 export default async function Home() {
+    const projects = await getProjects();
+    const linkedinPosts = await getLinkedInPosts();
+
     return (
         <div>
             <Hero />
             {/* On only show a preview/highlights on the landing page */}
-            <LatestProjects projects={projectsData.slice(0, 3)} />
+            <LatestProjects projects={projects.slice(0, 3)} />
             <OurSpecs />
-            <LinkedInPosts />
+            <LinkedInPosts posts={linkedinPosts} />
             
             {/* CTA for other pages */}
             <div className="text-center my-24 px-6">

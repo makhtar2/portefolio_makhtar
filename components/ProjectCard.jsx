@@ -7,9 +7,13 @@ import { motion } from 'framer-motion'
 const ProjectCard = ({ project }) => {
     const [imgError, setImgError] = useState(false);
     const category = project.category || "General";
-    const isPlaceholder = !project.image || project.image.includes('placeholder');
-    const imagePath = `/assets/projects/${project.image}`;
-    const projectUrl = project.links?.view || "#";
+    
+    // Support both Supabase and JSON formats
+    const imageName = project.image_url || project.image;
+    const isPlaceholder = !imageName || imageName.includes('placeholder');
+    const imagePath = imageName?.startsWith('http') ? imageName : `/assets/projects/${imageName}`;
+    const projectUrl = project.site_url || project.links?.view || "#";
+    const projectName = project.name || "Projet Sans Nom";
 
     return (
         <motion.a 
@@ -29,7 +33,7 @@ const ProjectCard = ({ project }) => {
                     fill
                     className='object-cover transition-transform duration-500 group-hover:scale-110' 
                     src={imagePath} 
-                    alt={project.name} 
+                    alt={projectName} 
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
                     onError={() => setImgError(true)}
                 />
@@ -43,11 +47,11 @@ const ProjectCard = ({ project }) => {
                     <div className="relative z-10">
                         <div className="size-16 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center text-white mb-6 mx-auto border border-white/20 shadow-2xl">
                             <span className="text-3xl font-black">
-                                {project.name.charAt(0)}
+                                {projectName.charAt(0)}
                             </span>
                         </div>
                         <h3 className="text-white font-black text-2xl sm:text-3xl tracking-tighter leading-[1.1] mb-2 uppercase italic drop-shadow-lg">
-                            {project.name}
+                            {projectName}
                         </h3>
                         <p className="text-white/70 text-[10px] font-black uppercase tracking-[0.3em]">
                             En développement
@@ -61,7 +65,7 @@ const ProjectCard = ({ project }) => {
                 <div className="size-14 bg-brand-primary/20 backdrop-blur-md rounded-full flex items-center justify-center text-white mb-4 border border-white/10">
                     <ExternalLinkIcon size={24} />
                 </div>
-                <h3 className="text-white font-black text-xl tracking-tight leading-tight">{project.name}</h3>
+                <h3 className="text-white font-black text-xl tracking-tight leading-tight">{projectName}</h3>
                 <p className="text-brand-primary text-[10px] font-black uppercase tracking-widest mt-2">{category}</p>
                 {projectUrl === "#" && (
                     <span className="text-white/60 text-[10px] mt-4 font-bold italic leading-tight max-w-[200px]">

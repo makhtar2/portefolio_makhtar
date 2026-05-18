@@ -1,14 +1,16 @@
 'use client'
-import React, { useState } from 'react'
-import { Plus, Trash2, ExternalLink, Save, Linkedin } from 'lucide-react'
+import React, { useState, useEffect } from 'react'
+import { Plus, Trash2, ExternalLink, Save, Linkedin, Loader2 } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { createClient } from '@/lib/supabase/client'
+import { toast } from 'react-hot-toast'
 
 export default function AdminLinkedIn() {
     const [isAdding, setIsAdding] = useState(false);
-    const [posts, setPosts] = useState([
-        { id: 1, title: "Lancement de JULO 🚀", url: "https://linkedin.com/posts/1", published_at: "2026-05-15" },
-        { id: 2, title: "Expérience UCAK 🎓", url: "https://linkedin.com/posts/2", published_at: "2026-05-10" },
-    ]);
+    const [posts, setPosts] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [submitting, setSubmitting] = useState(false);
+    const supabase = createClient();
 
     const [newPost, setNewPost] = useState({
         title: '',
@@ -18,13 +20,69 @@ export default function AdminLinkedIn() {
         published_at: new Date().toISOString().split('T')[0]
     });
 
-    const handleAddPost = (e) => {
+    useEffect(() => {
+        fetchPosts();
+    }, []);
+
+    const fetchPosts = async () => {
+        try {
+            const { data, error } = await supabase
+                .from('linkedin_posts')
+                .select('*')
+                .order('published_at', { ascending: false });
+            
+            if (error) throw error;
+            setPosts(data || []);
+        } catch (error) {
+            toast.error('Erreur lors du chargement des posts');
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const handleAddPost = async (e) => {
         e.preventDefault();
-        // Logic to save to Supabase would go here
-        const id = posts.length + 1;
-        setPosts([{ id, ...newPost }, ...posts]);
-        setIsAdding(false);
-        setNewPost({ title: '', content: '', url: '', image_url: '', published_at: new Date().toISOString().split('T')[0] });
+        setSubmitting(true);
+        try {
+            const { error } = await supabase
+                .from('linkedin_posts')
+                .insert([{
+                    title: newPost.title,
+                    content: newPost.content,
+                    url: newPost.url,
+                    image_url: newPost.image_url,
+                    published_at: newPost.published_at
+                }]);
+
+            if (error) throw error;
+
+            toast.success('Post enregistré !');
+            setIsAdding(false);
+            setNewPost({ title: '', content: '', url: '', image_url: '', published_at: new Date().toISOString().split('T')[0] });
+            fetchPosts();
+        } catch (error) {
+            toast.error(error.message || 'Erreur lors de l\'ajout');
+        } finally {
+            setSubmitting(false);
+        }
+    };
+
+    const handleDeletePost = async (id) => {
+        if (!confirm('Voulez-vous vraiment supprimer ce post ?')) return;
+
+        try {
+            const { error } = await supabase
+                .from('linkedin_posts')
+                .delete()
+                .eq('id', id);
+
+            if (error) throw error;
+
+            toast.success('Post supprimé');
+            fetchPosts();
+        } catch (error) {
+            toast.error('Erreur lors de la suppression');
+        }
     };
 
     return (
@@ -105,8 +163,13 @@ export default function AdminLinkedIn() {
                                     className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl font-bold focus:outline-none focus:border-brand-primary transition-colors resize-none"
                                 ></textarea>
                             </div>
-                            <button type="submit" className="flex items-center justify-center gap-3 w-full py-5 bg-slate-900 text-white rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-black transition-all">
-                                <Save size={18} /> Enregistrer le post
+                            <button 
+                                type="submit" 
+                                disabled={submitting}
+                                className="flex items-center justify-center gap-3 w-full py-5 bg-slate-900 text-white rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-black transition-all disabled:opacity-50"
+                            >
+                                {submitting ? <Loader2 className="animate-spin" size={18} /> : <Save size={18} />}
+                                Enregistrer le post
                             </button>
                         </form>
                     </motion.div>
@@ -119,27 +182,39 @@ export default function AdminLinkedIn() {
                     <h3 className="text-xl font-black text-slate-900 tracking-tight">Posts publiés</h3>
                 </div>
                 <div className="divide-y divide-slate-50">
-                    {posts.map((post) => (
-                        <div key={post.id} className="p-6 sm:p-8 flex items-center justify-between gap-6 hover:bg-slate-50 transition-colors">
-                            <div className="flex items-center gap-6">
-                                <div className="size-12 bg-[#0077b5]/10 text-[#0077b5] rounded-xl flex items-center justify-center shrink-0">
-                                    <Linkedin size={20} fill="currentColor" />
-                                </div>
-                                <div>
-                                    <h4 className="font-black text-slate-900 tracking-tight">{post.title}</h4>
-                                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mt-1">Publié le {post.published_at}</p>
-                                </div>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <a href={post.url} target="_blank" className="p-3 text-slate-400 hover:text-brand-primary hover:bg-brand-primary/5 rounded-xl transition-all">
-                                    <ExternalLink size={18} />
-                                </a>
-                                <button className="p-3 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-xl transition-all">
-                                    <Trash2 size={18} />
-                                </button>
-                            </div>
+                    {loading ? (
+                        <div className="flex justify-center py-10">
+                            <Loader2 className="animate-spin text-brand-primary" size={24} />
                         </div>
-                    ))}
+                    ) : (
+                        posts.map((post) => (
+                            <div key={post.id} className="p-6 sm:p-8 flex items-center justify-between gap-6 hover:bg-slate-50 transition-colors">
+                                <div className="flex items-center gap-6">
+                                    <div className="size-12 bg-[#0077b5]/10 text-[#0077b5] rounded-xl flex items-center justify-center shrink-0">
+                                        <Linkedin size={20} fill="currentColor" />
+                                    </div>
+                                    <div>
+                                        <h4 className="font-black text-slate-900 tracking-tight">{post.title}</h4>
+                                        <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mt-1">Publié le {post.published_at}</p>
+                                    </div>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <a href={post.url} target="_blank" className="p-3 text-slate-400 hover:text-brand-primary hover:bg-brand-primary/5 rounded-xl transition-all">
+                                        <ExternalLink size={18} />
+                                    </a>
+                                    <button 
+                                        onClick={() => handleDeletePost(post.id)}
+                                        className="p-3 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-xl transition-all"
+                                    >
+                                        <Trash2 size={18} />
+                                    </button>
+                                </div>
+                            </div>
+                        ))
+                    )}
+                    {!loading && posts.length === 0 && (
+                        <p className="text-center py-10 text-slate-400 font-bold italic">Aucun post trouvé.</p>
+                    )}
                 </div>
             </div>
         </div>

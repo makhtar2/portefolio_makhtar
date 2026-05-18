@@ -1,4 +1,3 @@
-'use client'
 import React from 'react'
 import Image from 'next/image'
 import { 
@@ -19,12 +18,15 @@ import {
     XIcon
 } from 'lucide-react'
 import Link from 'next/link'
+import { getProjects } from "@/lib/supabase/public"
 
-const CVPage = () => {
-    
-    const handlePrint = () => {
-        window.print();
-    }
+import PrintButton from '@/components/PrintButton'
+
+const CVPage = async () => {
+    const projects = await getProjects();
+    const projectNames = projects.length > 0 
+        ? projects.map(p => p.name).join(', ') 
+        : "GymScore Sénégal, Sherifa Parfumerie, Vote Numérique UCAK, Gestion Kurel, Qurratul Ayni, Faaris Signature, PARAR, Roadmap Tracker MLOps, Babos.";
 
     return (
         <div className="min-h-screen bg-slate-50 py-12 px-4 print:p-0 print:bg-white">
@@ -42,12 +44,7 @@ const CVPage = () => {
                     >
                         <Download size={16} /> Télécharger PDF
                     </a>
-                    <button 
-                        onClick={handlePrint}
-                        className="bg-slate-900 text-white px-8 py-3.5 rounded-xl font-black text-xs uppercase tracking-widest flex items-center gap-2 hover:bg-black transition-all shadow-xl shadow-slate-900/10 active:scale-95"
-                    >
-                        <Printer size={16} /> Imprimer
-                    </button>
+                    <PrintButton />
                 </div>
             </div>
 
@@ -195,11 +192,11 @@ const CVPage = () => {
                             <div className="relative pl-6 border-l-2 border-slate-100">
                                 <div className="absolute top-0 -left-[5px] size-2 rounded-full bg-brand-primary" />
                                 <div className="flex justify-between items-start mb-1">
-                                    <h4 className="font-black text-slate-900 text-sm">Responsable Design & Com</h4>
+                                    <h4 className="font-black text-slate-900 text-sm">Prestataire Design Graphique</h4>
                                     <span className="text-[10px] font-black text-slate-400">2024 – Présent</span>
                                 </div>
                                 <p className="text-brand-primary font-black text-[10px] uppercase tracking-widest mb-2">UCAK Touba</p>
-                                <p className="text-xs text-slate-500 font-bold">Conception des supports de communication visuelle institutionnels et événementiels.</p>
+                                <p className="text-xs text-slate-500 font-bold">Conception de supports de communication visuelle institutionnels (Freelance).</p>
                             </div>
                             <div className="relative pl-6 border-l-2 border-slate-100">
                                 <div className="absolute top-0 -left-[5px] size-2 rounded-full bg-brand-primary" />
@@ -257,7 +254,7 @@ const CVPage = () => {
                             <div className="h-[2px] w-8 bg-brand-primary" /> Plateformes Réalisées
                         </h3>
                         <p className="text-[10px] font-bold text-slate-500 leading-relaxed">
-                            GymScore Sénégal, Sherifa Parfumerie, Vote Numérique UCAK, Gestion Kurel, Qurratul Ayni, Faaris Signature, PARAR, Roadmap Tracker MLOps, Babos.
+                            {projectNames}
                         </p>
                     </div>
 

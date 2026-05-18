@@ -1,14 +1,11 @@
-'use client'
 import React from 'react'
 import WorkHero from '@/components/WorkHero'
 import ProjectCard from '@/components/ProjectCard'
-import projectsData from "@/assets/data/projects.json"
-import { motion } from 'framer-motion'
+import { getProjects } from "@/lib/supabase/public"
 
-export default function WebProjectsPage() {
-    
-    // Filter projects for web category
-    const webProjects = projectsData.filter(p => p.category?.toLowerCase() === 'web');
+export default async function WebProjectsPage() {
+    const projects = await getProjects();
+    const webProjects = projects.filter(p => p.category?.toLowerCase() === 'web');
 
     return (
         <div className="pb-24">
