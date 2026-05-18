@@ -69,7 +69,7 @@ const ProjectCard = ({ project }) => {
 
                 {/* Action Link */}
                 <div className="mt-auto">
-                    {projectUrl !== "#" ? (
+                    {projectUrl !== "#" && !projectUrl.includes('example.com') ? (
                         <a 
                             href={projectUrl}
                             target="_blank"
@@ -80,9 +80,15 @@ const ProjectCard = ({ project }) => {
                             <ExternalLinkIcon size={14} className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
                         </a>
                     ) : (
-                        <span className="inline-flex items-center gap-3 bg-slate-50 text-slate-400 px-8 py-4 rounded-2xl font-black text-[10px] uppercase tracking-[0.2em] cursor-help italic">
-                            Projet Privé
-                        </span>
+                        <div className="flex flex-col gap-3">
+                            <span className="inline-flex items-center gap-3 bg-slate-50 text-slate-400 px-8 py-4 rounded-2xl font-black text-[10px] uppercase tracking-[0.2em] border border-slate-100">
+                                <span className="relative flex h-2 w-2">
+                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-primary opacity-75"></span>
+                                    <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-primary"></span>
+                                </span>
+                                Bientôt disponible
+                            </span>
+                        </div>
                     )}
                 </div>
             </div>
