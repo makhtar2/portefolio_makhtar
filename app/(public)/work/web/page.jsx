@@ -1,6 +1,6 @@
 import React from 'react'
 import WorkHero from '@/components/WorkHero'
-import ProjectCard from '@/components/ProjectCard'
+import ProjectGrid from '@/components/ProjectGrid'
 import { getProjects } from "@/lib/supabase/public"
 
 export default async function WebProjectsPage() {
@@ -16,17 +16,7 @@ export default async function WebProjectsPage() {
             />
 
             <div className="max-w-7xl mx-auto px-6 mt-16">
-                {webProjects.length > 0 ? (
-                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 gap-y-12'>
-                        {webProjects.map((project, index) => (
-                            <ProjectCard key={project.name || index} project={project} />
-                        ))}
-                    </div>
-                ) : (
-                    <div className="text-center py-32 bg-slate-50 rounded-[3rem] border border-dashed border-slate-200">
-                        <p className="text-slate-500 font-bold text-xl">Bientôt disponible...</p>
-                    </div>
-                )}
+                <ProjectGrid projects={webProjects} />
             </div>
         </div>
     )

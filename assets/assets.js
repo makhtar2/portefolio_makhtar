@@ -1,4 +1,13 @@
-import { ClockFadingIcon, HeadsetIcon, SendIcon, PaletteIcon, PrinterIcon, MonitorCogIcon, LayoutDashboardIcon, PenToolIcon } from "lucide-react";
+import { 
+    CodeIcon, 
+    FigmaIcon, 
+    PaletteIcon, 
+    PrinterIcon, 
+    MonitorIcon, 
+    HeadsetIcon,
+    PenToolIcon,
+    TerminalIcon
+} from "lucide-react";
 
 export const assets = {
 }
@@ -7,13 +16,13 @@ export const ourSpecsData = [
     { 
         title: "Développement Web", 
         description: "Création de sites web modernes, réactifs et performants utilisant les dernières technologies comme React et Next.js.", 
-        icon: SendIcon, 
+        icon: CodeIcon, 
         accent: '#d9a54e' 
     },
     { 
         title: "UI/UX Design", 
-        description: "Conception d'interfaces intuitives et d'expériences utilisateur mémorables pour vos applications et sites web.", 
-        icon: ClockFadingIcon, 
+        description: "Conception d'interfaces intuitives et d'expériences utilisateur mémorables sur Figma et Adobe XD.", 
+        icon: FigmaIcon, 
         accent: '#c2773a' 
     },
     { 
@@ -31,7 +40,7 @@ export const ourSpecsData = [
     { 
         title: "Maintenance Informatique", 
         description: "Diagnostic, réparation et entretien de vos équipements informatiques pour garantir leur performance.", 
-        icon: MonitorCogIcon, 
+        icon: MonitorIcon, 
         accent: '#d9a54e' 
     },
     { 

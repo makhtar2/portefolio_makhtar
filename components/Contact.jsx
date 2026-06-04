@@ -10,28 +10,28 @@ const Contact = () => {
     }
 
     return (
-        <div id="contact" className='flex flex-col items-center mx-4 my-24 text-center'>
+        <div id="contact" className='flex flex-col items-center mx-6 my-20 text-center'>
             <Title 
-                title="Parlons de votre projet" 
-                description="Vous avez une idée ou un projet en tête ? N'hésitez pas à me contacter pour en discuter. Je suis toujours ouvert à de nouvelles collaborations." 
+                title="Discutons de votre projet" 
+                description="Partagez votre idée, je vous fournirai une réponse rapide et professionnelle." 
                 visibleButton={false} 
             />
-            <form onSubmit={handleSubmit} className='flex bg-slate-50 text-sm p-1.5 rounded-full w-full max-w-xl my-6 border border-slate-100 shadow-sm'>
+            <form onSubmit={handleSubmit} className='flex flex-col sm:flex-row gap-2 bg-white w-full max-w-2xl my-8 p-2 border border-slate-100 rounded-xl shadow-sm'>
                 <input 
-                    className='flex-1 pl-6 bg-transparent outline-none text-slate-900 placeholder:text-slate-400 font-medium' 
+                    className='flex-1 px-4 py-3 bg-slate-50 outline-none text-slate-900 placeholder:text-slate-400 font-medium rounded-lg focus:bg-white focus:ring-2 focus:ring-brand-primary/20 transition text-sm' 
                     type="email" 
-                    placeholder='Votre adresse e-mail' 
+                    placeholder='votre@email.com' 
                     required 
                 />
                 <button 
                     type="submit" 
-                    className='bg-green-600 text-white px-8 py-3.5 rounded-full font-black text-[10px] uppercase tracking-widest hover:bg-green-700 active:scale-95 transition-all shadow-lg shadow-green-600/20'
+                    className='bg-brand-primary text-white px-6 py-3 rounded-lg font-black text-xs uppercase tracking-wide hover:brightness-110 active:scale-95 transition-all whitespace-nowrap shadow-sm'
                 >
-                    Envoyer
+                    S'inscrire
                 </button>
             </form>
-            <p className='text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-4'>
-                Réponse garantie sous 24h
+            <p className='text-xs font-semibold text-slate-500 uppercase tracking-wide'>
+                ✓ Réponse sous 24h
             </p>
         </div>
     )
