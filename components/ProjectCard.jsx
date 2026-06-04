@@ -1,5 +1,5 @@
 'use client'
-import Image from 'next/image'
+import NextImage from 'next/image'
 import { GlobeIcon, PaletteIcon, ExternalLinkIcon, MoveUpRightIcon } from 'lucide-react'
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
@@ -28,7 +28,7 @@ const ProjectCard = ({ project, onClick }) => {
       {/* Image Section */}
       <div className="relative aspect-[16/10] overflow-hidden bg-slate-50">
         {imagePath && !imgError ? (
-          <Image
+          <NextImage
             fill
             src={imagePath}
             alt={projectName}

@@ -1,5 +1,6 @@
  'use client'
 import React, { useEffect, useRef, useState } from 'react'
+import NextImage from 'next/image'
 import { GlobeIcon, PaletteIcon, XIcon, ExternalLinkIcon } from 'lucide-react'
 
 const ProjectModal = ({ project, onClose }) => {
@@ -76,7 +77,7 @@ const ProjectModal = ({ project, onClose }) => {
       <div ref={modalRef} tabIndex={-1} role="dialog" aria-modal="true" aria-labelledby="project-modal-title" className={`bg-white rounded-2xl max-w-3xl w-full overflow-hidden shadow-2xl transform transition-all duration-200 ${mounted ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
         <div className="relative aspect-[16/9] bg-slate-50 group overflow-hidden">
           {imagePath ? (
-            <Image fill src={imagePath} alt={project.name} className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="100vw" />
+            <NextImage fill src={imagePath} alt={project.name} className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="100vw" />
           ) : (
             <div className="absolute inset-0 bg-brand-gradient flex flex-col items-center justify-center p-8 text-center">
               <div className="size-20 bg-white/10 backdrop-blur-xl rounded-[2rem] flex items-center justify-center text-white mb-6 border border-white/20 shadow-2xl">
