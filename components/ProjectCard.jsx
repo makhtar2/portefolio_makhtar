@@ -1,11 +1,12 @@
 'use client'
-import { ExternalLinkIcon, LockIcon } from 'lucide-react'
+import { ExternalLinkIcon, LockIcon, XIcon } from 'lucide-react'
 import Image from 'next/image'
 import React, { useState } from 'react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const ProjectCard = ({ project, index = 0 }) => {
     const [imgError, setImgError] = useState(false)
+    const [isModalOpen, setIsModalOpen] = useState(false)
 
     const imageName = project.image_url || project.image
     const isPlaceholder = !imageName || imageName.includes('placeholder')
@@ -14,9 +15,11 @@ const ProjectCard = ({ project, index = 0 }) => {
     const projectName = project.name || 'Projet Sans Nom'
     const description = project.description || project.desc || ''
     const techStack = (project.tech_stack || project.tech || []).slice(0, 3)
+    const isDesign = project.category === 'Design' || projectUrl.includes('canva.com')
     const isLive = projectUrl !== '#' && !projectUrl.includes('example.com')
 
     return (
+        <>
         <motion.article
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -91,7 +94,7 @@ const ProjectCard = ({ project, index = 0 }) => {
 
                 {/* CTA — always at bottom */}
                 <div className="mt-auto pt-4">
-                    {isLive ? (
+                    {isLive && !isDesign ? (
                         <a
                             href={projectUrl}
                             target="_blank"
@@ -103,6 +106,14 @@ const ProjectCard = ({ project, index = 0 }) => {
                             Voir le projet
                             <ExternalLinkIcon size={14} />
                         </a>
+                    ) : isDesign ? (
+                        <button
+                            onClick={() => setIsModalOpen(true)}
+                            className="flex items-center justify-center gap-2 w-full py-3 rounded-xl font-black text-sm text-white transition-all duration-300 hover:brightness-110 active:scale-[0.98]"
+                            style={{ background: 'radial-gradient(circle at 50% 50%, #d9a54e, #c2773a)' }}
+                        >
+                            Voir le design
+                        </button>
                     ) : (
                         <div className="flex flex-col items-center justify-center gap-1.5 w-full py-3 px-4 rounded-xl border border-slate-200 bg-slate-50 text-center">
                             <div className="flex items-center gap-2 text-slate-500 text-sm font-black">
@@ -117,6 +128,43 @@ const ProjectCard = ({ project, index = 0 }) => {
                 </div>
             </div>
         </motion.article>
+
+        <AnimatePresence>
+            {isModalOpen && (
+                <motion.div 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="fixed inset-0 z-[999] flex items-center justify-center bg-black/90 p-4 sm:p-10 backdrop-blur-sm cursor-zoom-out"
+                    onClick={() => setIsModalOpen(false)}
+                >
+                    <motion.div 
+                        initial={{ scale: 0.9, y: 20 }}
+                        animate={{ scale: 1, y: 0 }}
+                        exit={{ scale: 0.9, y: 20 }}
+                        className="relative w-full max-w-5xl max-h-[90vh] flex justify-center cursor-default"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        {!imgError && !isPlaceholder && (
+                            <Image 
+                                src={imagePath}
+                                alt={`Design de ${projectName}`}
+                                width={1600}
+                                height={1200}
+                                className="object-contain w-auto h-auto max-w-full max-h-[90vh] rounded-2xl shadow-2xl"
+                            />
+                        )}
+                        <button 
+                            className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 text-white bg-slate-800 hover:bg-brand-primary p-2 rounded-full transition-colors shadow-xl"
+                            onClick={() => setIsModalOpen(false)}
+                        >
+                            <XIcon size={24} />
+                        </button>
+                    </motion.div>
+                </motion.div>
+            )}
+        </AnimatePresence>
+        </>
     )
 }
 

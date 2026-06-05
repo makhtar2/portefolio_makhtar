@@ -6,6 +6,12 @@ import Image from 'next/image'
 // Événements du parcours (générés chronologiquement)
 const timelineEvents = [
   {
+    year: "2026",
+    title: "Formateur Canva - Bénévolat",
+    description: "Animation de séances de formation gratuites sur l'outil Canva pour les étudiants de l'Université Cheikh Ahmadoul Khadim (UCAK). Un engagement pour servir et faire grandir la communauté estudiantine.",
+    image: "/assets/events/canva_formation.png"
+  },
+  {
     year: "2025",
     title: "Touba Bootcamp 2ème Édition",
     description: "Participation à la 2ème édition du Touba Bootcamp au sein du Complexe Cheikh Ahmadoul Khadim (CCAK). Une expérience enrichissante remplie de gratitude.",
