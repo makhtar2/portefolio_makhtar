@@ -14,15 +14,15 @@ const Hero = () => {
 
     return (
         <div className='px-4 sm:px-6 overflow-hidden'>
-            <div className='flex flex-col xl:flex-row gap-6 sm:gap-8 max-w-7xl mx-auto my-6 sm:my-10'>
+            <div className='max-w-7xl mx-auto my-6 sm:my-10'>
                 {/* BLOC PRINCIPAL */}
                 <motion.div 
                     initial={{ opacity: 0, scale: 0.98 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                    className='relative flex-[1.5] flex flex-col bg-brand-primary/5 rounded-[2.5rem] group overflow-hidden border border-brand-primary/10'
+                    className='relative w-full flex flex-col bg-brand-primary/5 rounded-[2.5rem] group overflow-hidden border border-brand-primary/10'
                 >
-                    <div className='relative p-8 sm:p-12 lg:p-16 xl:p-20 xl:pr-[40%] z-10'>
+                    <div className='relative p-8 sm:p-12 lg:p-16 xl:p-24 xl:pr-[45%] z-10'>
                         <motion.div 
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
@@ -79,7 +79,7 @@ const Hero = () => {
                         initial={{ opacity: 0, x: 100 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                        className='relative xl:absolute bottom-0 right-0 xl:-right-4 w-full xl:w-[42%] flex justify-center items-end mt-8 xl:mt-0 select-none pointer-events-none'
+                        className='relative xl:absolute bottom-0 right-0 xl:right-10 w-full xl:w-[45%] lg:w-[50%] flex justify-center items-end mt-8 xl:mt-0 select-none pointer-events-none'
                     >
                         <Image 
                             priority 
@@ -95,80 +95,6 @@ const Hero = () => {
                     </motion.div>
                 </motion.div>
 
-                {/* SIDE CARDS CONTAINER */}
-                <div className='flex flex-col md:flex-row xl:flex-col gap-6 w-full xl:max-w-sm'>
-                    {/* CARD: DESIGN GRAPHIQUE */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.2, duration: 0.4 }}
-                        className='flex-1 group'
-                    >
-                        <Link href="/work/design" className='relative flex flex-col justify-end w-full h-full min-h-[300px] bg-slate-50 rounded-3xl md:rounded-[3rem] p-10 overflow-hidden transition-all duration-700 hover:shadow-2xl hover:shadow-brand-primary/10 border border-slate-100 hover:border-brand-primary/20'>
-                            <div className="absolute inset-0 z-0">
-                                <Image
-                                    src="/assets/design-bg.png"
-                                    alt="Design"
-                                    fill
-                                    className="object-cover opacity-40 blur-[3px] group-hover:scale-110 group-hover:blur-[1px] transition-all duration-1000 ease-out"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent" />
-                            </div>
-
-                            <div className="relative z-10 flex flex-col items-center xl:items-start text-center xl:text-left">
-                                <span className='inline-block mb-3 px-4 py-1.5 bg-slate-900 text-white text-[9px] font-black uppercase tracking-widest rounded-full'>
-                                    Créativité
-                                </span>
-                                <h3 className='text-3xl font-black text-slate-900 tracking-tighter leading-none mb-4 font-display'>
-                                    Design <br className="hidden xl:block" /> Graphique
-                                </h3>
-                                <div className='flex items-center gap-2 font-black text-brand-secondary uppercase text-[11px] tracking-widest group-hover:translate-x-2 transition-all duration-300'>
-                                    Portfolio <ArrowRightIcon size={16} /> 
-                                </div>
-                            </div>
-
-                            <div className='absolute top-6 right-6 xl:top-8 xl:right-8 size-10 xl:size-12 rounded-xl xl:rounded-2xl bg-white shadow-md flex items-center justify-center text-slate-200 group-hover:text-brand-primary group-hover:rotate-45 transition-all duration-500'>
-                                <PlusIcon size={20} />
-                            </div>
-                        </Link>
-                    </motion.div>
-
-                    {/* CARD: DÉVELOPPEMENT WEB */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.3, duration: 0.4 }}
-                        className='flex-1 group'
-                    >
-                        <Link href="/work/web" className='relative flex flex-col justify-end w-full h-full min-h-[300px] bg-slate-900 rounded-3xl md:rounded-[3rem] p-10 overflow-hidden transition-all duration-700 hover:shadow-2xl hover:shadow-brand-primary/20 border border-slate-800 hover:border-brand-primary/40'>
-                            <div className="absolute inset-0 z-0">
-                                <Image
-                                    src="/assets/projects/sherifa.png"
-                                    alt="Web"
-                                    fill
-                                    className="object-cover opacity-50 blur-[3px] brightness-50 group-hover:scale-110 group-hover:blur-[1px] group-hover:brightness-75 transition-all duration-1000 ease-out"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent" />
-                            </div>
-
-                            <div className="relative z-10 flex flex-col items-center xl:items-start text-center xl:text-left">
-                                <span className='inline-block mb-3 px-4 py-1.5 bg-brand-gradient text-white text-[9px] font-black uppercase tracking-widest rounded-full'>
-                                    Performance
-                                </span>
-                                <h3 className='text-3xl font-black text-white tracking-tighter leading-none mb-4 font-display'>
-                                    Développement <br className="hidden xl:block" /> Web
-                                </h3>
-                                <div className='flex items-center gap-2 font-black text-brand-primary uppercase text-[11px] tracking-widest group-hover:translate-x-2 transition-all duration-300'>
-                                    Projets <ArrowRightIcon size={16} /> 
-                                </div>
-                            </div>
-
-                            <div className='absolute top-6 right-6 xl:top-8 xl:right-8 size-10 xl:size-12 rounded-xl xl:rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center text-white/20 group-hover:text-brand-primary group-hover:rotate-90 transition-all duration-500'>
-                                <ZapIcon size={20} fill="currentColor" />
-                            </div>
-                        </Link>
-                    </motion.div>
-                </div>
             </div>
             
             {/* MARQUEE */}
