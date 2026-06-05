@@ -126,20 +126,24 @@ export default function AboutPage() {
                    </span>
                 </div>
 
-                {/* Premium Bento Image Card */}
-                <div className="relative w-full aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-2xl shadow-slate-200 group-hover:shadow-brand-primary/20 transition-all duration-700 border border-slate-100">
-                  <Image 
-                    src={event.image} 
-                    alt={event.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90" />
+                {/* Premium Bento Card */}
+                <div className="flex flex-col w-full bg-white rounded-[2.5rem] shadow-xl shadow-slate-200 group-hover:shadow-2xl group-hover:shadow-brand-primary/20 transition-all duration-700 border border-slate-100 overflow-hidden">
                   
-                  {/* Text Overlay */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                    <h3 className="text-2xl md:text-3xl font-black text-white mb-2 tracking-tight drop-shadow-lg">{event.title}</h3>
-                    <p className="text-slate-200 font-medium text-sm md:text-base drop-shadow-md">
+                  {/* Image section: fully visible, uncropped */}
+                  <div className="w-full bg-slate-50 border-b border-slate-100 overflow-hidden">
+                    <Image 
+                      src={event.image} 
+                      alt={event.title}
+                      width={1000}
+                      height={800}
+                      className="w-full h-auto object-contain group-hover:scale-[1.03] transition-transform duration-700"
+                    />
+                  </div>
+                  
+                  {/* Text Container */}
+                  <div className="p-6 md:p-8 bg-white">
+                    <h3 className="text-2xl md:text-3xl font-black text-slate-900 mb-3 tracking-tight">{event.title}</h3>
+                    <p className="text-slate-500 font-medium text-sm md:text-base leading-relaxed">
                       {event.description}
                     </p>
                   </div>
