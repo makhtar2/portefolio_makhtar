@@ -84,7 +84,7 @@ const CVPage = async () => {
                             <div className="size-8 rounded-lg bg-white/5 flex items-center justify-center text-brand-primary">
                                 <Globe size={14} />
                             </div>
-                            <span>makhtarwade.netlify.app</span>
+                            <span>almuxtaardev.vercel.app</span>
                         </div>
                     </div>
 
@@ -261,7 +261,7 @@ const CVPage = async () => {
                             © 2026 Tous droits réservés
                         </div>
                         <div className="size-16 bg-slate-100 rounded-2xl flex items-center justify-center text-[8px] font-black text-slate-300 text-center uppercase tracking-widest p-2">
-                            makhtarwade.netlify.app
+                            almuxtaardev.vercel.app
                         </div>
                     </div>
                 </div>
