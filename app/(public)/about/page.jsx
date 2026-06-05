@@ -90,43 +90,64 @@ export default function AboutPage() {
       </div>
 
       {/* TIMELINE INTERACTIVE */}
-      <div className="relative border-l-2 border-slate-100 md:mx-auto md:w-full md:max-w-4xl">
-        {timelineEvents.map((event, index) => (
+      <div className="relative md:mx-auto md:w-full md:max-w-5xl mt-10">
+        {/* Central Line for Desktop */}
+        <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-1.5 bg-slate-100 -translate-x-1/2 rounded-full" />
+        {/* Left Line for Mobile */}
+        <div className="md:hidden absolute left-[23px] top-0 bottom-0 w-1.5 bg-slate-100 rounded-full" />
+
+        {timelineEvents.map((event, index) => {
+          const isEven = index % 2 === 0;
+          return (
           <motion.div 
             key={index}
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="mb-16 ml-6 md:ml-12 relative"
+            className={`mb-24 relative flex flex-col md:flex-row items-center w-full ${isEven ? 'md:justify-start' : 'md:justify-end'}`}
           >
-            {/* Timeline Dot */}
-            <span className="absolute -left-[35px] md:-left-[59px] top-1 size-5 bg-white border-4 border-brand-primary rounded-full shadow-sm" />
+            {/* Timeline Dot Desktop */}
+            <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 size-10 bg-white border-4 border-brand-primary rounded-full shadow-xl items-center justify-center z-10">
+               <div className="size-3 bg-brand-secondary rounded-full" />
+            </div>
+
+            {/* Timeline Dot Mobile */}
+            <div className="md:hidden absolute left-[23px] top-1/2 -translate-y-1/2 -translate-x-1/2 size-7 bg-white border-[3px] border-brand-primary rounded-full shadow-lg z-10" />
             
-            <div className="flex flex-col md:flex-row gap-8 bg-slate-50 border border-slate-100 p-6 md:p-8 rounded-[2rem] hover:shadow-2xl hover:shadow-brand-primary/10 hover:bg-white transition-all duration-500 group">
-              <div className="flex-1">
-                <span className="inline-block px-3 py-1 bg-brand-primary/10 text-brand-secondary font-black text-xs rounded-lg mb-4">
-                  {event.year}
-                </span>
-                <h3 className="text-2xl font-black text-slate-900 mb-3 tracking-tight">{event.title}</h3>
-                <p className="text-slate-500 font-medium leading-relaxed">
-                  {event.description}
-                </p>
-              </div>
-              
-              {/* Image Bento Style */}
-              <div className="relative w-full md:w-72 h-56 md:h-auto rounded-[1.5rem] overflow-hidden group-hover:shadow-lg transition-all duration-500">
-                <Image 
-                  src={event.image} 
-                  alt={event.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-slate-900/5 group-hover:bg-transparent transition-colors duration-500" />
+            {/* Content Container */}
+            <div className={`w-full md:w-[45%] pl-14 pr-4 md:px-0 ${isEven ? 'md:pr-16' : 'md:pl-16'}`}>
+              <div className="flex flex-col gap-4 group">
+                
+                {/* Year Bubble */}
+                <div className={`flex ${isEven ? 'md:justify-end' : 'md:justify-start'}`}>
+                   <span className="inline-block px-5 py-2 bg-slate-900 text-white font-black text-sm rounded-2xl shadow-xl shadow-slate-900/20">
+                     {event.year}
+                   </span>
+                </div>
+
+                {/* Premium Bento Image Card */}
+                <div className="relative w-full aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-2xl shadow-slate-200 group-hover:shadow-brand-primary/20 transition-all duration-700 border border-slate-100">
+                  <Image 
+                    src={event.image} 
+                    alt={event.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-90" />
+                  
+                  {/* Text Overlay */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                    <h3 className="text-2xl md:text-3xl font-black text-white mb-2 tracking-tight drop-shadow-lg">{event.title}</h3>
+                    <p className="text-slate-200 font-medium text-sm md:text-base drop-shadow-md">
+                      {event.description}
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>
-        ))}
+        )})}
       </div>
 
       {/* CALL TO ACTION */}
