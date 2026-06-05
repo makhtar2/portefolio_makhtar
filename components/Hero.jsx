@@ -83,6 +83,7 @@ const Hero = () => {
                     >
                         <Image 
                             priority 
+                            sizes="(max-width: 640px) 80vw, (max-width: 1280px) 70vw, 600px"
                             className='w-[80%] sm:w-[70%] xl:w-full h-auto drop-shadow-2xl brightness-105' 
                             src="/assets/hero-main.png" 
                             alt="Makhtar" 
