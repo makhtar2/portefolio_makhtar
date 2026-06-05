@@ -26,7 +26,7 @@ const OurSpecs = () => {
                                     <spec.icon size={28} />
                                 </div>
                                 <h3 className='text-slate-900 font-black text-2xl mb-4 tracking-tight group-hover:text-brand-primary transition-colors'>{spec.title}</h3>
-                                <p className='text-sm sm:text-base text-slate-500 font-bold leading-relaxed opacity-80'>{spec.description}</p>
+                                <p className='text-sm sm:text-base text-slate-600 font-bold leading-relaxed'>{spec.description}</p>
                             </motion.div>
                         )
                     })
