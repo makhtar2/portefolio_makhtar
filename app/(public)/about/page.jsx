@@ -7,6 +7,12 @@ import Image from 'next/image'
 const timelineEvents = [
   {
     year: "2024",
+    title: "Cérémonie de Graduation UCAK",
+    description: "Célébration et remise de diplômes lors de la cérémonie officielle.",
+    image: "/assets/events/event9.jpg"
+  },
+  {
+    year: "2024",
     title: "Touba Bootcamp 2ème Édition",
     description: "Échanges et développement intensif lors du hackathon 72h Xidmatoul Xadiim.",
     image: "/assets/events/event1.jpg"
@@ -31,9 +37,33 @@ const timelineEvents = [
   },
   {
     year: "2022",
+    title: "Atelier de Code Intensif",
+    description: "Programmation et résolution de problèmes en groupe restreint.",
+    image: "/assets/events/event8.jpg"
+  },
+  {
+    year: "2022",
     title: "Remise de Certificats",
     description: "Cérémonie de remise d'attestations suite à la formation en développement web.",
     image: "/assets/events/event4.jpg"
+  },
+  {
+    year: "2020",
+    title: "Premières Certifications",
+    description: "Obtention de mes premières certifications techniques.",
+    image: "/assets/events/event6.jpg"
+  },
+  {
+    year: "2019",
+    title: "Participation aux Événements",
+    description: "Découverte de l'écosystème tech et de la culture (ex: Goethe Institut).",
+    image: "/assets/events/event7.jpg"
+  },
+  {
+    year: "2018",
+    title: "Initiation au Codage à Thiès",
+    description: "Participation au programme de formation pour l'intégration du codage informatique dans l'enseignement, mentionné sur allAfrica.com.",
+    image: "/assets/events/event10.jpg"
   }
 ]
 
