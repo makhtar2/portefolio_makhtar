@@ -67,22 +67,20 @@ const Navbar = () => {
             </header>
 
             {/* MOBILE BOTTOM NAVBAR */}
-            <nav role="navigation" aria-label="Navigation principale" className="md:hidden fixed bottom-0 left-0 right-0 z-[100] bg-white/90 backdrop-blur-2xl border-t border-slate-100 pb-safe">
-                <div className="flex items-center justify-around h-20 px-2">
+            <nav className="md:hidden fixed bottom-0 left-0 right-0 z-[100] bg-white/90 backdrop-blur-2xl border-t border-slate-100 pb-safe">
+                <div className="flex items-center justify-around h-16 px-2">
                     {navLinks.map((link) => {
                         const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href));
                         return (
                             <Link 
                                 key={link.name} 
-                                href={link.href}
-                                aria-label={link.name}
-                                aria-current={isActive ? 'page' : undefined}
+                                href={link.href} 
                                 className="relative flex flex-col items-center justify-center flex-1 h-full gap-1"
                             >
-                                <div className={`p-2 rounded-xl transition-all duration-300 ${isActive ? 'text-brand-primary scale-110' : 'text-slate-400 opacity-90'}`}>
+                                <div className={`p-2 rounded-xl transition-all duration-300 ${isActive ? 'text-brand-primary scale-110' : 'text-slate-400 opacity-70'}`}>
                                     <link.icon size={22} strokeWidth={isActive ? 2.5 : 2} />
                                 </div>
-                                <span className={`text-[10px] font-black uppercase tracking-wider transition-colors ${isActive ? 'text-brand-primary' : 'text-slate-500'}`}>
+                                <span className={`text-[8px] font-black uppercase tracking-wider transition-all ${isActive ? 'text-brand-primary' : 'text-slate-500 opacity-0 h-0 overflow-hidden'}`}>
                                     {link.name}
                                 </span>
                                 
