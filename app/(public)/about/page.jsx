@@ -3,67 +3,67 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
-// Temporary placeholders, the user can replace them
+// Événements du parcours (générés chronologiquement)
 const timelineEvents = [
   {
-    year: "2024",
-    title: "Cérémonie de Graduation UCAK",
-    description: "Célébration et remise de diplômes lors de la cérémonie officielle.",
-    image: "/assets/events/event9.jpg"
-  },
-  {
-    year: "2024",
+    year: "2025",
     title: "Touba Bootcamp 2ème Édition",
-    description: "Échanges et développement intensif lors du hackathon 72h Xidmatoul Xadiim.",
-    image: "/assets/events/event1.jpg"
-  },
-  {
-    year: "2024",
-    title: "Présentation de Projets",
-    description: "Démonstration des solutions développées devant le jury et les participants du Bootcamp.",
+    description: "Participation à la 2ème édition du Touba Bootcamp au sein du Complexe Cheikh Ahmadoul Khadim (CCAK). Une expérience enrichissante remplie de gratitude.",
     image: "/assets/events/event3.jpg"
   },
   {
-    year: "2023",
-    title: "Développement UCAK",
-    description: "Travail sur le projet de l'Université Cheikh Ahmadoul Khadim (UCAK).",
-    image: "/assets/events/event2.jpg"
+    year: "2025",
+    title: "Préparation PAS Challenge JOJ 2026",
+    description: "Participation au hackathon préparatoire PAS challenge pour les Jeux Olympiques de la Jeunesse (JOJ) de Dakar 2026.",
+    image: "/assets/events/pas_challenge.webp"
   },
   {
-    year: "2023",
-    title: "Travail d'Équipe & Conception",
-    description: "Session de brainstorming et de conception d'interfaces en équipe.",
-    image: "/assets/events/event5.jpg"
+    year: "2025",
+    title: "2ème Place Rio Digital Show",
+    description: "Prix de la 2ème place remportée au concours d'innovation Rio Digital Show.",
+    image: "/assets/events/hackrio.JPG"
   },
   {
-    year: "2022",
-    title: "Atelier de Code Intensif",
-    description: "Programmation et résolution de problèmes en groupe restreint.",
-    image: "/assets/events/event8.jpg"
+    year: "2025",
+    title: "Mentor - Hackathon Touba",
+    description: "Intervention en tant que Mentor lors du Hackathon Touba 2025, organisé à l'Université Cheikh Ahmadoul Khadim en partenariat avec Sonatel.",
+    image: "/assets/events/coachhackathon.png"
   },
   {
-    year: "2022",
-    title: "Remise de Certificats",
-    description: "Cérémonie de remise d'attestations suite à la formation en développement web.",
-    image: "/assets/events/event4.jpg"
+    year: "2024",
+    title: "Présentation Aksil Touba",
+    description: "Présentation de notre projet Aksil Touba, lauréat du premier prix lors du hackathon.",
+    image: "/assets/events/mentor.png"
+  },
+  {
+    year: "2024",
+    title: "1er Prix Hackathon Sonatel",
+    description: "Remise du Premier prix du Hackathon Sonatel organisé à Touba.",
+    image: "/assets/events/event12.JPG"
   },
   {
     year: "2020",
-    title: "Premières Certifications",
-    description: "Obtention de mes premières certifications techniques.",
-    image: "/assets/events/event6.jpg"
+    title: "Présentation Application Mobile",
+    description: "Présentation d'application mobile devant un jury lors de la formation Mjangal.",
+    image: "/assets/events/event8.jpg"
+  },
+  {
+    year: "2020",
+    title: "Stage p5.js - Motifs Wax",
+    description: "Stage sur la bibliothèque p5.js portant sur la création de motifs Wax avec JavaScript, encadré par Mjangal.",
+    image: "/assets/events/event11.jpg"
   },
   {
     year: "2019",
-    title: "Participation aux Événements",
-    description: "Découverte de l'écosystème tech et de la culture (ex: Goethe Institut).",
-    image: "/assets/events/event7.jpg"
+    title: "Formation Développement Mobile",
+    description: "Poursuite de la formation et de l'apprentissage en développement mobile encadrée par Mjangal.",
+    image: "/assets/events/event10.jpg"
   },
   {
     year: "2018",
-    title: "Initiation au Codage à Thiès",
-    description: "Participation au programme de formation pour l'intégration du codage informatique dans l'enseignement, mentionné sur allAfrica.com.",
-    image: "/assets/events/event10.jpg"
+    title: "Développement MIT App Inventor",
+    description: "Débuts en programmation. Formation en développement d'applications mobiles avec Mjangal en utilisant la plateforme MIT App Inventor.",
+    image: "/assets/events/event6.jpg"
   }
 ]
 
