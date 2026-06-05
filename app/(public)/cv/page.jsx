@@ -6,8 +6,7 @@ import {
     MapPin, 
     Globe, 
     Linkedin, 
-    Download, 
-    Printer,
+    Download,
     Code2,
     ShieldCheck,
     Palette,
@@ -19,8 +18,6 @@ import {
 } from 'lucide-react'
 import Link from 'next/link'
 import { getProjects } from "@/lib/supabase/public"
-
-import PrintButton from '@/components/PrintButton'
 
 const CVPage = async () => {
     const projects = await getProjects();
@@ -38,13 +35,12 @@ const CVPage = async () => {
                 </Link>
                 <div className="flex gap-4">
                     <a 
-                        href="/MAKHTAR_WADE_CV.pdf" 
-                        download
+                        href="/api/cv" 
+                        download="Makhtar_Wade_CV.html"
                         className="bg-brand-gradient text-white px-8 py-3.5 rounded-xl font-black text-xs uppercase tracking-widest flex items-center gap-2 hover:scale-105 transition-all shadow-xl shadow-brand-primary/20 active:scale-95"
                     >
-                        <Download size={16} /> Télécharger PDF
+                        <Download size={16} /> Télécharger CV
                     </a>
-                    <PrintButton />
                 </div>
             </div>
 

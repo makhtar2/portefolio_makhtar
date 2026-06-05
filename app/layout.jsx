@@ -1,10 +1,13 @@
-import { Outfit } from "next/font/google";
+import { Syne, DM_Sans } from "next/font/google";
 import { Suspense } from "react";
 import { Toaster } from "react-hot-toast";
 import Analytics from "@/components/Analytics";
+import CustomCursor from "@/components/CustomCursor";
+import SecretTerminal from "@/components/SecretTerminal";
 import "./globals.css";
 
-const outfit = Outfit({ subsets: ["latin"], weight: ["400", "500", "600", "900"] });
+const syne = Syne({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"], variable: "--font-syne" });
+const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-dm-sans" });
 
 export const viewport = {
     width: "device-width",
@@ -52,7 +55,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="fr" className="scroll-smooth" data-scroll-behavior="smooth">
-            <body className={`${outfit.className} antialiased pb-20 md:pb-0`}>
+            <body className={`${syne.variable} ${dmSans.variable} font-sans antialiased pb-20 md:pb-0`}>
+                <CustomCursor />
+                <SecretTerminal />
                 <Toaster />
                 {/* <Suspense fallback={null}>
                     <Analytics />

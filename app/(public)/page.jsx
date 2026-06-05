@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import StatsBar from "@/components/StatsBar";
 import LatestProjects from "@/components/LatestProjects";
 import OurSpecs from "@/components/OurSpec";
 import LinkedInPosts from "@/components/LinkedInPosts";
@@ -12,6 +13,7 @@ export default async function Home() {
     return (
         <div>
             <Hero />
+            <StatsBar />
             {/* On only show a preview/highlights on the landing page */}
             <LatestProjects projects={projects.slice(0, 3)} />
             <OurSpecs />

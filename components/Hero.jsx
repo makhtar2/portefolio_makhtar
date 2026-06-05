@@ -37,7 +37,7 @@ const Hero = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.2, duration: 0.5 }}
-                            className='text-4xl sm:text-6xl lg:text-7xl leading-[1.1] my-6 sm:my-8 font-black tracking-tighter text-slate-900'
+                            className='text-4xl sm:text-6xl lg:text-7xl leading-[1.1] my-6 sm:my-8 font-black tracking-tighter text-slate-900 font-display'
                         >
                             AlmuxtaarDev : Développeur & <span className='text-brand-gradient'>Designer.</span>
                         </motion.h2>
@@ -116,7 +116,7 @@ const Hero = () => {
                                 <span className='inline-block mb-3 px-4 py-1.5 bg-slate-900 text-white text-[9px] font-black uppercase tracking-widest rounded-full'>
                                     Créativité
                                 </span>
-                                <h3 className='text-3xl font-black text-slate-900 tracking-tighter leading-none mb-4'>
+                                <h3 className='text-3xl font-black text-slate-900 tracking-tighter leading-none mb-4 font-display'>
                                     Design <br className="hidden xl:block" /> Graphique
                                 </h3>
                                 <div className='flex items-center gap-2 font-black text-brand-secondary uppercase text-[11px] tracking-widest group-hover:translate-x-2 transition-all duration-300'>
@@ -152,7 +152,7 @@ const Hero = () => {
                                 <span className='inline-block mb-3 px-4 py-1.5 bg-brand-gradient text-white text-[9px] font-black uppercase tracking-widest rounded-full'>
                                     Performance
                                 </span>
-                                <h3 className='text-3xl font-black text-white tracking-tighter leading-none mb-4'>
+                                <h3 className='text-3xl font-black text-white tracking-tighter leading-none mb-4 font-display'>
                                     Développement <br className="hidden xl:block" /> Web
                                 </h3>
                                 <div className='flex items-center gap-2 font-black text-brand-primary uppercase text-[11px] tracking-widest group-hover:translate-x-2 transition-all duration-300'>

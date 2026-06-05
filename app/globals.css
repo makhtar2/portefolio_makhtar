@@ -3,6 +3,8 @@
 @theme {
     --color-brand-primary: #d9a54e;
     --color-brand-secondary: #c2773a;
+    --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+    --font-display: var(--font-syne), ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {

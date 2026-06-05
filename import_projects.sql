@@ -11,3 +11,14 @@ VALUES
 ('Service Agri - Identité Visuelle', 'Conception d''une charte graphique et de supports de communication pour le secteur agricole. Un design épuré alliant nature et innovation.', 'serviceagri.png', 'design', 'https://canva.link/2kqnxotkekxcqxl', ARRAY['Canva', 'Graphic Design', 'Agri-Branding']),
 ('Design Institutionnel - UCAK', 'Conception de supports de communication visuelle institutionnels. Un mélange de rigueur académique et de créativité moderne.', 'design-ucak.png', 'design', 'https://canva.link/dzjavtf39cmqd4h', ARRAY['Canva', 'Graphic Design', 'Branding']),
 ('GymScore', 'Application de suivi de performance physique permettant l''enregistrement précis et l''analyse des scores sportifs en temps réel.', 'gymscore.png', 'web', 'https://gymscore.vercel.app/', ARRAY['React Native Web', 'Fitness']);
+
+-- Global Air SN (ajout manuel)
+INSERT INTO public.projects (name, description, image_url, category, site_url, tech_stack)
+VALUES (
+  'Global Air SN',
+  'Plateforme e-commerce de produits high-tech et électroniques au Sénégal. Un catalogue complet avec gestion des commandes, paiement intégré et une expérience shopping fluide et moderne.',
+  'globalairsn.png',
+  'web',
+  'https://www.globalairsn.com/',
+  ARRAY['Next.js', 'E-commerce', 'Tailwind CSS', 'Supabase']
+);
