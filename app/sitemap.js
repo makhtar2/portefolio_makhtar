@@ -1,12 +1,12 @@
 export default async function sitemap() {
-  const baseUrl = 'https://makhtar-portfolio.vercel.app' // TODO: Update with real URL
-
+  const baseUrl = 'https://almuxtaardev.vercel.app'
+  
   // Static routes for the portfolio
   const staticRoutes = [
     '',
     '/work',
     '/services',
-    '/about',
+    '/cv',
     '/contact',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
