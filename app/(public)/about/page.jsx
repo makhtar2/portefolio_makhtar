@@ -7,21 +7,33 @@ import Image from 'next/image'
 const timelineEvents = [
   {
     year: "2024",
-    title: "1er Prix Hackathon de Dakar",
-    description: "Développement d'une solution innovante pour l'éducation, récompensée parmi plus de 50 projets.",
-    image: "/assets/hero-main.png"
+    title: "Touba Bootcamp 2ème Édition",
+    description: "Échanges et développement intensif lors du hackathon 72h Xidmatoul Xadiim.",
+    image: "/assets/events/event1.jpg"
+  },
+  {
+    year: "2024",
+    title: "Présentation de Projets",
+    description: "Démonstration des solutions développées devant le jury et les participants du Bootcamp.",
+    image: "/assets/events/event3.jpg"
   },
   {
     year: "2023",
-    title: "Lancement de UCAK Vote Numérique",
-    description: "Mise en place d'un système de vote électronique sécurisé pour plus de 3000 étudiants.",
-    image: "/assets/projects/ucak.png"
+    title: "Développement UCAK",
+    description: "Travail sur le projet de l'Université Cheikh Ahmadoul Khadim (UCAK).",
+    image: "/assets/events/event2.jpg"
+  },
+  {
+    year: "2023",
+    title: "Travail d'Équipe & Conception",
+    description: "Session de brainstorming et de conception d'interfaces en équipe.",
+    image: "/assets/events/event5.jpg"
   },
   {
     year: "2022",
-    title: "Début de l'Aventure Freelance",
-    description: "Premières missions en tant que Développeur Full Stack et Designer UI/UX.",
-    image: "/assets/design-bg.png"
+    title: "Remise de Certificats",
+    description: "Cérémonie de remise d'attestations suite à la formation en développement web.",
+    image: "/assets/events/event4.jpg"
   }
 ]
 
