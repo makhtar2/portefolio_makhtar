@@ -24,6 +24,9 @@ export const metadata = {
     keywords: ["AlmuxtaarDev", "Makhtar Wade", "Portfolio", "Développeur Full Stack", "Designer", "Sénégal", "Dakar", "Touba", "Next.js", "Tailwind CSS"],
     authors: [{ name: "Makhtar Wade" }],
     metadataBase: new URL("https://almuxtaardev.vercel.app"),
+    verification: {
+        google: 'I-JWfpWAoLx2luVVTMRl0KmEKWM2M8T5JtZw9K9i_Hw',
+    },
     alternates: {
         canonical: '/',
     },
