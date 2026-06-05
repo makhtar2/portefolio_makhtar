@@ -86,7 +86,7 @@ export default function StatsBar() {
                             <p className="text-sm sm:text-base font-black text-slate-900 mt-2 leading-tight">
                                 {stat.label}
                             </p>
-                            <p className="text-[11px] font-medium text-slate-400 mt-1 uppercase tracking-wider">
+                            <p className="text-[11px] font-bold text-slate-500 mt-1 uppercase tracking-wider">
                                 {stat.sublabel}
                             </p>
                         </div>

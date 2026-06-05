@@ -36,10 +36,10 @@ const Footer = () => {
     ];
 
     const socialIcons = [
-        { icon: Facebook, link: "https://www.facebook.com", color: 'hover:text-blue-600' },
-        { icon: Instagram, link: "https://www.instagram.com", color: 'hover:text-pink-600' },
-        { icon: Twitter, link: "https://twitter.com", color: 'hover:text-blue-400' },
-        { icon: Linkedin, link: "https://www.linkedin.com", color: 'hover:text-blue-700' },
+        { name: "Facebook", icon: Facebook, link: "https://www.facebook.com", color: 'hover:text-blue-600' },
+        { name: "Instagram", icon: Instagram, link: "https://www.instagram.com", color: 'hover:text-pink-600' },
+        { name: "Twitter", icon: Twitter, link: "https://twitter.com", color: 'hover:text-blue-400' },
+        { name: "LinkedIn", icon: Linkedin, link: "https://www.linkedin.com", color: 'hover:text-blue-700' },
     ]
 
     return (
@@ -59,6 +59,7 @@ const Footer = () => {
                                 <Link 
                                     href={item.link} 
                                     key={i} 
+                                    aria-label={`Suivez-nous sur ${item.name}`}
                                     className={`group flex items-center justify-center size-10 bg-slate-50 rounded-xl transition-all hover:bg-white hover:shadow-xl hover:shadow-slate-200/50 ${item.color}`}
                                 >
                                     <item.icon size={18} />
@@ -90,12 +91,11 @@ const Footer = () => {
                     </div>
                 </div>
 
-                {/* Bottom Footer */}
                 <div className="py-10 border-t border-slate-50 flex flex-col sm:flex-row justify-between items-center gap-6">
-                    <p className="text-[11px] font-black text-slate-400 tracking-tight uppercase tracking-[0.2em]">
+                    <p className="text-[11px] font-black text-slate-500 uppercase tracking-[0.2em]">
                         © 2026 ALMUXTAARDEV. TOUS DROITS RÉSERVÉS.
                     </p>
-                    <div className="flex items-center gap-8 text-[11px] font-black text-slate-400 uppercase tracking-widest">
+                    <div className="flex items-center gap-8 text-[11px] font-black text-slate-500 uppercase tracking-widest">
                          <Link href="/contact" className="hover:text-brand-primary transition-colors">Contact</Link>
                     </div>
                 </div>

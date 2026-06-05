@@ -12,7 +12,6 @@ const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600", "700"
 export const viewport = {
     width: "device-width",
     initialScale: 1,
-    maximumScale: 1,
     themeColor: "#16a34a",
 };
 

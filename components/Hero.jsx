@@ -27,7 +27,7 @@ const Hero = () => {
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: 0.1, duration: 0.4 }}
-                            className='inline-flex items-center gap-2 sm:gap-3 bg-white/80 border border-brand-primary/20 text-brand-secondary pr-4 p-1 rounded-full text-[10px] sm:text-xs backdrop-blur-sm shadow-sm'
+                            className='inline-flex items-center gap-2 sm:gap-3 bg-white/80 border border-brand-primary/20 text-slate-800 pr-4 p-1 rounded-full text-[10px] sm:text-xs backdrop-blur-sm shadow-sm'
                         >
                             <span className='bg-brand-gradient px-2 sm:px-3 py-1 rounded-full text-white text-[10px] font-black'>DISPONIBLE</span> 
                             <span className='line-clamp-1 font-bold'>Ouvert à de nouvelles opportunités !</span>

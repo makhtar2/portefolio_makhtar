@@ -82,7 +82,7 @@ const ProjectCard = ({ project, index = 0 }) => {
                     <div className="flex flex-wrap gap-1.5 mt-1">
                         {techStack.map((tech, i) => (
                             <span key={i}
-                                className="px-2.5 py-1 text-[10px] font-bold text-slate-500 bg-slate-100 rounded-lg border border-slate-200/60 uppercase tracking-wider">
+                                className="px-2.5 py-1 text-[10px] font-bold text-slate-600 bg-slate-100 rounded-lg border border-slate-200/60 uppercase tracking-wider">
                                 {tech}
                             </span>
                         ))}
@@ -96,6 +96,7 @@ const ProjectCard = ({ project, index = 0 }) => {
                             href={projectUrl}
                             target="_blank"
                             rel="noopener noreferrer"
+                            aria-label={`Voir le projet ${projectName}`}
                             className="flex items-center justify-center gap-2 w-full py-3 rounded-xl font-black text-sm text-white transition-all duration-300 hover:brightness-110 active:scale-[0.98]"
                             style={{ background: 'radial-gradient(circle at 50% 50%, #d9a54e, #c2773a)' }}
                         >
@@ -108,7 +109,7 @@ const ProjectCard = ({ project, index = 0 }) => {
                                 <LockIcon size={13} className="text-slate-400" />
                                 <span>Confidentiel · En production</span>
                             </div>
-                            <p className="text-[11px] text-slate-400 font-medium leading-snug">
+                            <p className="text-[11px] text-slate-500 font-medium leading-snug">
                                 Plateforme opérationnelle — accès restreint
                             </p>
                         </div>
