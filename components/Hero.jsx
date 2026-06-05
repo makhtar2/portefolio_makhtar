@@ -22,7 +22,7 @@ const Hero = () => {
                     transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                     className='relative flex-[1.5] flex flex-col bg-brand-primary/5 rounded-[2.5rem] group overflow-hidden border border-brand-primary/10'
                 >
-                    <div className='p-8 sm:p-16 lg:p-20 z-10'>
+                    <div className='relative p-8 sm:p-12 lg:p-16 xl:p-20 xl:pr-[40%] z-10'>
                         <motion.div 
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
@@ -79,7 +79,7 @@ const Hero = () => {
                         initial={{ opacity: 0, x: 100 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                        className='relative xl:absolute bottom-0 right-0 xl:right-4 w-full xl:w-[45%] flex justify-center items-end mt-8 xl:mt-0 select-none pointer-events-none'
+                        className='relative xl:absolute bottom-0 right-0 xl:-right-4 w-full xl:w-[42%] flex justify-center items-end mt-8 xl:mt-0 select-none pointer-events-none'
                     >
                         <Image 
                             priority 
