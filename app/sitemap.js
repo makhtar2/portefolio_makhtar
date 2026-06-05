@@ -4,9 +4,9 @@ export default async function sitemap() {
   // Static routes for the portfolio
   const staticRoutes = [
     '',
+    '/about',
     '/work',
     '/services',
-    '/cv',
     '/contact',
   ].map((route) => ({
     url: `${baseUrl}${route}`,

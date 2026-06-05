@@ -17,11 +17,11 @@ export const viewport = {
 
 export const metadata = {
     title: {
-        default: "AlmuxtaarDev | Développeur Full Stack & Designer Créatif",
-        template: "%s | AlmuxtaarDev"
+        default: "Makhtar Wade (AlmuxtaarDev) | Développeur Full Stack & Designer UI/UX",
+        template: "%s | Makhtar Wade"
     },
-    description: "Expert en création d'expériences digitales premium. Développement Web Full Stack, Design UI/UX et identité visuelle au Sénégal.",
-    keywords: ["AlmuxtaarDev", "Makhtar Wade", "Portfolio", "Développeur Full Stack", "Designer", "Sénégal", "Dakar", "Touba", "Next.js", "Tailwind CSS"],
+    description: "Portfolio de Makhtar Wade (AlmuxtaarDev). Développeur Full Stack et Designer Créatif basé au Sénégal. Expert en création d'expériences digitales premium et modernes.",
+    keywords: ["Makhtar Wade", "AlmuxtaarDev", "Portfolio Makhtar", "Développeur Full Stack Sénégal", "Designer Dakar", "Next.js", "Créatif", "Touba"],
     authors: [{ name: "Makhtar Wade" }],
     metadataBase: new URL("https://almuxtaardev.vercel.app"),
     verification: {
@@ -31,16 +31,16 @@ export const metadata = {
         canonical: '/',
     },
     openGraph: {
-        title: "AlmuxtaarDev | Créativité & Technologie",
-        description: "Explorez mon univers digital : Projets Web, Design Graphique et solutions sur mesure.",
+        title: "Makhtar Wade | Portfolio Développeur & Designer",
+        description: "Explorez l'univers digital de Makhtar Wade (AlmuxtaarDev) : Projets Web, Design Graphique et solutions sur mesure.",
         url: 'https://almuxtaardev.vercel.app',
-        siteName: 'AlmuxtaarDev Portfolio',
+        siteName: 'Makhtar Wade Portfolio',
         images: [
             {
                 url: '/profile.jpeg',
                 width: 1200,
                 height: 630,
-                alt: 'AlmuxtaarDev - Développeur Full Stack & Designer',
+                alt: 'Makhtar Wade - Développeur Full Stack & Designer',
             },
         ],
         locale: 'fr_FR',
