@@ -133,7 +133,7 @@ export default function AboutPage() {
                   <div className="w-full bg-slate-50 border-b border-slate-100 overflow-hidden">
                     <Image 
                       src={event.image} 
-                      alt={event.title}
+                      alt={`Makhtar Wade - ${event.title}`}
                       width={1000}
                       height={800}
                       className="w-full h-auto object-contain group-hover:scale-[1.03] transition-transform duration-700"

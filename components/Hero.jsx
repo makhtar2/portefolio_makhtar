@@ -88,7 +88,7 @@ const Hero = () => {
                             sizes="(max-width: 640px) 80vw, (max-width: 1280px) 70vw, 600px"
                             className='w-[80%] sm:w-[70%] xl:w-full h-auto drop-shadow-2xl brightness-105' 
                             src="/assets/hero-main.png" 
-                            alt="Makhtar" 
+                            alt="Makhtar Wade - Développeur Full Stack & Designer UI/UX" 
                             width={600} 
                             height={600}
                         />

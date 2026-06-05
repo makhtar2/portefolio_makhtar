@@ -30,7 +30,7 @@ const ProjectCard = ({ project, index = 0 }) => {
                     <Image
                         fill
                         src={imagePath}
-                        alt={projectName}
+                        alt={`Projet ${projectName} - Makhtar Wade (AlmuxtaarDev)`}
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 420px"
                         className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                         onError={() => setImgError(true)}
