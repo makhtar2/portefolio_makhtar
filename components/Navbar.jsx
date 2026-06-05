@@ -10,6 +10,7 @@ const Navbar = () => {
 
     const navLinks = [
         { name: 'Accueil', href: '/', icon: Home },
+        { name: 'Parcours', href: '/about', icon: User },
         { name: 'Projets', href: '/work', icon: Briefcase },
         { name: 'Services', href: '/services', icon: Wrench },
     ];
