@@ -22,3 +22,14 @@ VALUES (
   'https://www.globalairsn.com/',
   ARRAY['Next.js', 'E-commerce', 'Tailwind CSS', 'Supabase']
 );
+
+-- ANSD (ajout manuel)
+INSERT INTO public.projects (name, description, image_url, category, site_url, tech_stack)
+VALUES (
+  'ANSD - Reproduction',
+  'Reproduction du site de l''Agence Nationale de la Statistique et de la Démographie (ANSD). Projet d''apprentissage en programmation web pour mon portfolio.',
+  'ansd.png',
+  'web',
+  'https://ansdformakhtar.netlify.app/',
+  ARRAY['HTML', 'CSS', 'JavaScript']
+);

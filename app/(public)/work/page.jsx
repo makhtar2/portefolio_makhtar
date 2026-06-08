@@ -9,6 +9,8 @@ export const metadata = {
     description: 'Découvrez tous les projets de Makhtar Wade — applications web, e-commerce, design graphique et plus.',
 }
 
+export const revalidate = 60; // Revalidate cache every 60 seconds
+
 export default async function WorkPage() {
     const projects = await getProjects()
 

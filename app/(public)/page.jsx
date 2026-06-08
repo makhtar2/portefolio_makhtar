@@ -6,6 +6,8 @@ import LinkedInPosts from "@/components/LinkedInPosts";
 import { getProjects, getLinkedInPosts } from "@/lib/supabase/public";
 import Link from "next/link";
 
+export const revalidate = 60; // Revalidate cache every 60 seconds
+
 export default async function Home() {
     const projects = await getProjects();
     const linkedinPosts = await getLinkedInPosts();
