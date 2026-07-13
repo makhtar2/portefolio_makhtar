@@ -60,27 +60,18 @@
         }
     }
 
-    /* Vertical auto-scrolling carousel (parcours) */
-    @keyframes vscroll {
-        from {
-            transform: translateY(0);
-        }
-        to {
-            transform: translateY(-50%);
-        }
-    }
-
-    .vscroll-track {
-        animation: vscroll var(--vscroll-duration, 45s) linear infinite;
+    /* Horizontal auto-scrolling carousel (parcours) */
+    .hscroll-track {
+        animation: marqueeScroll var(--hscroll-duration, 60s) linear infinite;
         will-change: transform;
     }
 
-    .vscroll-viewport:hover .vscroll-track {
+    .hscroll-viewport:hover .hscroll-track {
         animation-play-state: paused;
     }
 
     @media (prefers-reduced-motion: reduce) {
-        .vscroll-track {
+        .hscroll-track {
             animation: none;
         }
     }

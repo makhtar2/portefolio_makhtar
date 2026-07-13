@@ -95,30 +95,30 @@ export default function AboutPage() {
         </motion.p>
       </div>
 
-      {/* PARCOURS — CARROUSEL VERTICAL AUTO */}
+      {/* PARCOURS — CARROUSEL HORIZONTAL AUTO */}
       <div
-        className="vscroll-viewport relative mx-auto w-full max-w-2xl h-[560px] md:h-[680px] overflow-hidden"
+        className="hscroll-viewport relative w-full overflow-hidden py-4"
         style={{
-          maskImage: 'linear-gradient(to bottom, transparent, #000 10%, #000 90%, transparent)',
-          WebkitMaskImage: 'linear-gradient(to bottom, transparent, #000 10%, #000 90%, transparent)',
+          maskImage: 'linear-gradient(to right, transparent, #000 6%, #000 94%, transparent)',
+          WebkitMaskImage: 'linear-gradient(to right, transparent, #000 6%, #000 94%, transparent)',
         }}
       >
-        <div className="vscroll-track flex flex-col" style={{ ['--vscroll-duration']: '55s' }}>
+        <div className="hscroll-track flex w-max" style={{ ['--hscroll-duration']: '60s' }}>
           {[...timelineEvents, ...timelineEvents].map((event, index) => (
             <article
               key={index}
               aria-hidden={index >= timelineEvents.length}
-              className="mb-8 shrink-0 group"
+              className="mr-6 shrink-0 w-[320px] sm:w-[420px] md:w-[500px] group"
             >
-              <div className="flex flex-col w-full bg-white rounded-[2.5rem] shadow-xl shadow-slate-200 hover:shadow-2xl hover:shadow-brand-primary/20 transition-shadow duration-500 border border-slate-100 overflow-hidden">
-                {/* Image */}
-                <div className="relative w-full h-48 md:h-56 bg-slate-50 overflow-hidden">
+              <div className="flex flex-col h-full bg-white rounded-[2.5rem] shadow-xl shadow-slate-200 hover:shadow-2xl hover:shadow-brand-primary/20 transition-shadow duration-500 border border-slate-100 overflow-hidden">
+                {/* Image — fully visible (object-contain) */}
+                <div className="relative w-full h-72 md:h-80 bg-slate-50 overflow-hidden">
                   <Image
                     src={event.image}
                     alt={`Makhtar Wade - ${event.title}`}
                     fill
-                    sizes="(max-width: 768px) 100vw, 672px"
-                    className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.04]"
+                    sizes="(max-width: 640px) 320px, (max-width: 768px) 420px, 500px"
+                    className="object-contain p-3 transition-transform duration-700 group-hover:scale-[1.03]"
                   />
                   {/* Year badge */}
                   <span className="absolute top-4 left-4 px-4 py-1.5 bg-slate-900/90 backdrop-blur-sm text-white font-black text-xs rounded-xl shadow-lg">
@@ -127,9 +127,9 @@ export default function AboutPage() {
                 </div>
 
                 {/* Text */}
-                <div className="p-6 md:p-8">
-                  <h3 className="text-xl md:text-2xl font-black text-slate-900 mb-2 tracking-tight">{event.title}</h3>
-                  <p className="text-slate-500 font-medium text-sm md:text-base leading-relaxed line-clamp-3">
+                <div className="p-6 md:p-7">
+                  <h3 className="text-lg md:text-xl font-black text-slate-900 mb-2 tracking-tight">{event.title}</h3>
+                  <p className="text-slate-500 font-medium text-sm leading-relaxed line-clamp-3">
                     {event.description}
                   </p>
                 </div>
