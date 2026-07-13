@@ -33,3 +33,14 @@ VALUES (
   'https://ansdformakhtar.netlify.app/',
   ARRAY['HTML', 'CSS', 'JavaScript']
 );
+
+-- Al Karim Vision (ajout manuel)
+INSERT INTO public.projects (name, description, image_url, category, site_url, tech_stack)
+VALUES (
+  'Al Karim Vision',
+  'Boutique en ligne de prestige spécialisée dans les lunettes de vue et de soleil, montres et parfums de marque à Touba. Une expérience e-commerce raffinée avec navigation par catégories, mode sombre et panier intégré.',
+  'alkarimvision.png',
+  'web',
+  'https://www.alkarimvision.com/',
+  ARRAY['Next.js', 'React', 'E-commerce', 'Tailwind CSS']
+);
