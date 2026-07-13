@@ -4,20 +4,15 @@ import {
     Phone, 
     Mail, 
     MapPin, 
-    Globe, 
-    Linkedin, 
-    Download,
-    Code2,
+    Globe,
     ShieldCheck,
-    Palette,
     Zap,
-    GraduationCap,
-    Briefcase,
     Award,
-    XIcon
+    ArrowLeft
 } from 'lucide-react'
 import Link from 'next/link'
 import { getProjects } from "@/lib/supabase/public"
+import PrintButton from "./PrintButton"
 
 const CVPage = async () => {
     const projects = await getProjects();
@@ -29,18 +24,11 @@ const CVPage = async () => {
         <div className="min-h-screen bg-slate-50 py-12 px-4 print:p-0 print:bg-white">
             {/* TOOLBAR - HIDDEN ON PRINT */}
             <div className="max-w-4xl mx-auto mb-8 flex justify-between items-center print:hidden">
-                <Link href="/" className="text-slate-900 font-black text-2xl tracking-tighter hover:opacity-70 transition-all flex items-center gap-3">
-                    <div className="size-10 bg-brand-gradient rounded-xl flex items-center justify-center text-white text-base">M</div>
-                    Générateur de CV <span className="text-brand-primary">Pro</span>
+                <Link href="/" className="text-slate-500 font-black text-xs uppercase tracking-widest hover:text-slate-900 transition-all flex items-center gap-2">
+                    <ArrowLeft size={16} /> Retour
                 </Link>
                 <div className="flex gap-4">
-                    <a 
-                        href="/api/cv" 
-                        download="Makhtar_Wade_CV.html"
-                        className="bg-brand-gradient text-white px-8 py-3.5 rounded-xl font-black text-xs uppercase tracking-widest flex items-center gap-2 hover:scale-105 transition-all shadow-xl shadow-brand-primary/20 active:scale-95"
-                    >
-                        <Download size={16} /> Télécharger CV
-                    </a>
+                    <PrintButton />
                 </div>
             </div>
 
