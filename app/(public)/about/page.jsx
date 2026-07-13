@@ -93,32 +93,6 @@ export default function AboutPage() {
         >
           Au-delà du code et du design, voici les moments marquants, les événements et les projets qui ont forgé mon expérience.
         </motion.p>
-
-        {/* QUICK STATS BENTO */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto"
-        >
-          <div className="bg-white rounded-[2rem] p-6 border border-slate-100 shadow-xl shadow-slate-200/50 flex flex-col items-center justify-center text-center hover:scale-105 transition-transform duration-300">
-            <span className="text-4xl md:text-5xl font-black text-brand-primary mb-2 tracking-tighter">7+</span>
-            <span className="text-[10px] md:text-xs font-black text-slate-500 uppercase tracking-widest">Ans d'Évolution</span>
-          </div>
-          <div className="bg-slate-900 rounded-[2rem] p-6 shadow-xl shadow-slate-900/20 flex flex-col items-center justify-center text-center hover:scale-105 transition-transform duration-300 relative overflow-hidden group">
-            <div className="absolute inset-0 bg-brand-gradient opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
-            <span className="text-4xl md:text-5xl font-black text-white mb-2 tracking-tighter relative z-10">1er</span>
-            <span className="text-[10px] md:text-xs font-black text-slate-400 uppercase tracking-widest relative z-10">Prix Innovation</span>
-          </div>
-          <div className="bg-white rounded-[2rem] p-6 border border-slate-100 shadow-xl shadow-slate-200/50 flex flex-col items-center justify-center text-center hover:scale-105 transition-transform duration-300">
-            <span className="text-4xl md:text-5xl font-black text-brand-primary mb-2 tracking-tighter">15+</span>
-            <span className="text-[10px] md:text-xs font-black text-slate-500 uppercase tracking-widest">Événements Tech</span>
-          </div>
-          <div className="bg-white rounded-[2rem] p-6 border border-slate-100 shadow-xl shadow-slate-200/50 flex flex-col items-center justify-center text-center hover:scale-105 transition-transform duration-300">
-            <span className="text-3xl md:text-4xl font-black text-brand-primary mb-2 tracking-tighter">Coach</span>
-            <span className="text-[10px] md:text-xs font-black text-slate-500 uppercase tracking-widest">Mentor Tech</span>
-          </div>
-        </motion.div>
       </div>
 
       {/* TIMELINE INTERACTIVE */}
