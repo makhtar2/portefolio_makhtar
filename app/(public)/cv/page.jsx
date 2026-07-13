@@ -33,12 +33,12 @@ const CVPage = async () => {
             </div>
 
             {/* CV CONTENT - A4 DESIGN */}
-            <div className="max-w-4xl mx-auto bg-white shadow-2xl rounded-[2.5rem] overflow-hidden flex flex-col md:flex-row print:shadow-none print:rounded-none print:w-full min-h-[297mm]">
-                
+            <div className="max-w-4xl mx-auto bg-white shadow-2xl rounded-[2.5rem] overflow-hidden flex flex-col md:flex-row print:flex-row print:shadow-none print:rounded-none print:max-w-none print:w-[210mm] print:min-h-0 print:mx-0 min-h-[297mm]">
+
                 {/* LEFT SIDEBAR - BRANDED */}
-                <div className="w-full md:w-80 bg-slate-900 text-white p-10 flex flex-col gap-10">
+                <div className="w-full md:w-80 print:w-72 bg-slate-900 text-white p-10 print:p-7 flex flex-col gap-10 print:gap-6">
                     {/* Portrait */}
-                    <div className="relative size-48 mx-auto rounded-[2.5rem] overflow-hidden border-4 border-white/10 bg-brand-gradient shadow-2xl">
+                    <div className="relative size-48 print:size-36 mx-auto rounded-[2.5rem] overflow-hidden border-4 border-white/10 bg-brand-gradient shadow-2xl">
                         <Image 
                             src="/assets/hero-main.png" 
                             alt="Makhtar Wade" 
@@ -48,7 +48,7 @@ const CVPage = async () => {
                     </div>
 
                     {/* Contact Info */}
-                    <div className="space-y-6">
+                    <div className="space-y-6 print:space-y-3">
                         <h3 className="text-brand-primary font-black uppercase text-[10px] tracking-[0.2em] border-b border-white/10 pb-2">Contact</h3>
                         <div className="flex items-center gap-4 text-xs font-bold">
                             <div className="size-8 rounded-lg bg-white/5 flex items-center justify-center text-brand-primary">
@@ -77,9 +77,9 @@ const CVPage = async () => {
                     </div>
 
                     {/* Technical Stack */}
-                    <div className="space-y-6">
+                    <div className="space-y-6 print:space-y-3">
                         <h3 className="text-brand-primary font-black uppercase text-[10px] tracking-[0.2em] border-b border-white/10 pb-2">Expertise</h3>
-                        <div className="flex flex-col gap-5">
+                        <div className="flex flex-col gap-5 print:gap-2.5">
                             <div className="space-y-2">
                                 <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Développement</p>
                                 <div className="flex flex-wrap gap-1.5">
@@ -124,7 +124,7 @@ const CVPage = async () => {
                     </div>
 
                     {/* Languages */}
-                    <div className="space-y-6 mt-auto">
+                    <div className="space-y-6 print:space-y-3 mt-auto">
                         <h3 className="text-brand-primary font-black uppercase text-[10px] tracking-[0.2em] border-b border-white/10 pb-2">Langues</h3>
                         <div className="space-y-3">
                             <div className="flex justify-between text-[11px] font-bold">
@@ -144,13 +144,13 @@ const CVPage = async () => {
                 </div>
 
                 {/* MAIN CONTENT */}
-                <div className="flex-1 p-12 sm:p-16 flex flex-col gap-10">
+                <div className="flex-1 p-12 sm:p-16 print:p-9 flex flex-col gap-10 print:gap-5">
                     {/* Header */}
                     <div>
                         <h2 className="text-5xl sm:text-6xl font-black text-slate-900 tracking-tighter leading-[0.9] mb-4 uppercase">
                             Makhtar <br /><span className="text-brand-gradient">Wade</span>
                         </h2>
-                        <p className="text-brand-secondary font-black text-xs sm:text-sm uppercase tracking-[0.3em] mb-8">
+                        <p className="text-brand-secondary font-black text-xs sm:text-sm uppercase tracking-[0.3em] mb-8 print:mb-3">
                             Développeur Full-Stack & Designer UI/UX
                         </p>
                         <p className="text-slate-500 font-bold text-sm sm:text-base leading-relaxed max-w-xl">
@@ -160,10 +160,10 @@ const CVPage = async () => {
 
                     {/* Experiences */}
                     <div>
-                        <h3 className="text-xs font-black text-slate-900 uppercase tracking-[0.3em] flex items-center gap-3 mb-8">
+                        <h3 className="text-xs font-black text-slate-900 uppercase tracking-[0.3em] flex items-center gap-3 mb-8 print:mb-4">
                             <div className="h-[2px] w-8 bg-brand-primary" /> Expériences Professionnelles
                         </h3>
-                        <div className="space-y-8">
+                        <div className="space-y-8 print:space-y-4">
                             <div className="relative pl-6 border-l-2 border-slate-100">
                                 <div className="absolute top-0 -left-[5px] size-2 rounded-full bg-brand-primary" />
                                 <div className="flex justify-between items-start mb-1">

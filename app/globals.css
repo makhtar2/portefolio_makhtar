@@ -76,3 +76,26 @@
         }
     }
 }
+
+/* ── Impression / Export PDF (page /cv) ──
+   La navbar, le footer et la nav mobile fixe sont rendus par le layout global :
+   on les masque à l'impression pour n'exporter que la carte CV au format A4. */
+@media print {
+    @page {
+        size: A4;
+        margin: 0;
+    }
+
+    html,
+    body {
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #fff !important;
+    }
+
+    header,
+    footer,
+    nav {
+        display: none !important;
+    }
+}
