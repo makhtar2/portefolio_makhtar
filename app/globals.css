@@ -59,4 +59,29 @@
             transform: translateX(-50%);
         }
     }
+
+    /* Vertical auto-scrolling carousel (parcours) */
+    @keyframes vscroll {
+        from {
+            transform: translateY(0);
+        }
+        to {
+            transform: translateY(-50%);
+        }
+    }
+
+    .vscroll-track {
+        animation: vscroll var(--vscroll-duration, 45s) linear infinite;
+        will-change: transform;
+    }
+
+    .vscroll-viewport:hover .vscroll-track {
+        animation-play-state: paused;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .vscroll-track {
+            animation: none;
+        }
+    }
 }

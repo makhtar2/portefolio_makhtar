@@ -95,69 +95,48 @@ export default function AboutPage() {
         </motion.p>
       </div>
 
-      {/* TIMELINE INTERACTIVE */}
-      <div className="relative md:mx-auto md:w-full md:max-w-5xl mt-10">
-        {/* Central Line for Desktop */}
-        <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-1.5 bg-slate-100 -translate-x-1/2 rounded-full" />
-        {/* Left Line for Mobile */}
-        <div className="md:hidden absolute left-[23px] top-0 bottom-0 w-1.5 bg-slate-100 rounded-full" />
-
-        {timelineEvents.map((event, index) => {
-          const isEven = index % 2 === 0;
-          return (
-          <motion.div 
-            key={index}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            className={`mb-24 relative flex flex-col md:flex-row items-center w-full ${isEven ? 'md:justify-start' : 'md:justify-end'}`}
-          >
-            {/* Timeline Dot Desktop */}
-            <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 size-10 bg-white border-4 border-brand-primary rounded-full shadow-xl items-center justify-center z-10">
-               <div className="size-3 bg-brand-secondary rounded-full" />
-            </div>
-
-            {/* Timeline Dot Mobile */}
-            <div className="md:hidden absolute left-[23px] top-1/2 -translate-y-1/2 -translate-x-1/2 size-7 bg-white border-[3px] border-brand-primary rounded-full shadow-lg z-10" />
-            
-            {/* Content Container */}
-            <div className={`w-full md:w-[45%] pl-14 pr-4 md:px-0 ${isEven ? 'md:pr-16' : 'md:pl-16'}`}>
-              <div className="flex flex-col gap-4 group">
-                
-                {/* Year Bubble */}
-                <div className={`flex ${isEven ? 'md:justify-end' : 'md:justify-start'}`}>
-                   <span className="inline-block px-5 py-2 bg-slate-900 text-white font-black text-sm rounded-2xl shadow-xl shadow-slate-900/20">
-                     {event.year}
-                   </span>
+      {/* PARCOURS — CARROUSEL VERTICAL AUTO */}
+      <div
+        className="vscroll-viewport relative mx-auto w-full max-w-2xl h-[560px] md:h-[680px] overflow-hidden"
+        style={{
+          maskImage: 'linear-gradient(to bottom, transparent, #000 10%, #000 90%, transparent)',
+          WebkitMaskImage: 'linear-gradient(to bottom, transparent, #000 10%, #000 90%, transparent)',
+        }}
+      >
+        <div className="vscroll-track flex flex-col" style={{ ['--vscroll-duration']: '55s' }}>
+          {[...timelineEvents, ...timelineEvents].map((event, index) => (
+            <article
+              key={index}
+              aria-hidden={index >= timelineEvents.length}
+              className="mb-8 shrink-0 group"
+            >
+              <div className="flex flex-col w-full bg-white rounded-[2.5rem] shadow-xl shadow-slate-200 hover:shadow-2xl hover:shadow-brand-primary/20 transition-shadow duration-500 border border-slate-100 overflow-hidden">
+                {/* Image */}
+                <div className="relative w-full h-48 md:h-56 bg-slate-50 overflow-hidden">
+                  <Image
+                    src={event.image}
+                    alt={`Makhtar Wade - ${event.title}`}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 672px"
+                    className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.04]"
+                  />
+                  {/* Year badge */}
+                  <span className="absolute top-4 left-4 px-4 py-1.5 bg-slate-900/90 backdrop-blur-sm text-white font-black text-xs rounded-xl shadow-lg">
+                    {event.year}
+                  </span>
                 </div>
 
-                {/* Premium Bento Card */}
-                <div className="flex flex-col w-full bg-white rounded-[2.5rem] shadow-xl shadow-slate-200 group-hover:shadow-2xl group-hover:shadow-brand-primary/20 transition-all duration-700 border border-slate-100 overflow-hidden">
-                  
-                  {/* Image section: fully visible, uncropped */}
-                  <div className="w-full bg-slate-50 border-b border-slate-100 overflow-hidden">
-                    <Image 
-                      src={event.image} 
-                      alt={`Makhtar Wade - ${event.title}`}
-                      width={1000}
-                      height={800}
-                      className="w-full h-auto object-contain group-hover:scale-[1.03] transition-transform duration-700"
-                    />
-                  </div>
-                  
-                  {/* Text Container */}
-                  <div className="p-6 md:p-8 bg-white">
-                    <h3 className="text-2xl md:text-3xl font-black text-slate-900 mb-3 tracking-tight">{event.title}</h3>
-                    <p className="text-slate-500 font-medium text-sm md:text-base leading-relaxed">
-                      {event.description}
-                    </p>
-                  </div>
+                {/* Text */}
+                <div className="p-6 md:p-8">
+                  <h3 className="text-xl md:text-2xl font-black text-slate-900 mb-2 tracking-tight">{event.title}</h3>
+                  <p className="text-slate-500 font-medium text-sm md:text-base leading-relaxed line-clamp-3">
+                    {event.description}
+                  </p>
                 </div>
               </div>
-            </div>
-          </motion.div>
-        )})}
+            </article>
+          ))}
+        </div>
       </div>
 
       {/* CALL TO ACTION */}
