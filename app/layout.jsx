@@ -3,7 +3,6 @@ import { Suspense } from "react";
 import { Toaster } from "react-hot-toast";
 import Analytics from "@/components/Analytics";
 import CustomCursor from "@/components/CustomCursor";
-import SecretTerminal from "@/components/SecretTerminal";
 import "./globals.css";
 
 const syne = Syne({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"], variable: "--font-syne" });
@@ -59,7 +58,6 @@ export default function RootLayout({ children }) {
         <html lang="fr" className="scroll-smooth" data-scroll-behavior="smooth">
             <body className={`${syne.variable} ${dmSans.variable} font-sans antialiased pb-20 md:pb-0`}>
                 <CustomCursor />
-                <SecretTerminal />
                 <Toaster />
                 {/* <Suspense fallback={null}>
                     <Analytics />

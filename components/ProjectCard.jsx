@@ -115,14 +115,9 @@ const ProjectCard = ({ project, index = 0 }) => {
                             Voir le design
                         </button>
                     ) : (
-                        <div className="flex flex-col items-center justify-center gap-1.5 w-full py-3 px-4 rounded-xl border border-slate-200 bg-slate-50 text-center">
-                            <div className="flex items-center gap-2 text-slate-500 text-sm font-black">
-                                <LockIcon size={13} className="text-slate-400" />
-                                <span>Confidentiel · En production</span>
-                            </div>
-                            <p className="text-[11px] text-slate-500 font-medium leading-snug">
-                                Plateforme opérationnelle — accès restreint
-                            </p>
+                        <div className="flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl border border-slate-200 bg-slate-50 text-slate-500 text-sm font-black">
+                            <LockIcon size={13} className="text-slate-400" />
+                            <span>Projet privé</span>
                         </div>
                     )}
                 </div>

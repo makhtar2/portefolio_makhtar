@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import { Plus, Briefcase, Linkedin, Users, Loader2, LayoutDashboard } from 'lucide-react'
+import { Plus, Briefcase, Linkedin, Loader2, LayoutDashboard } from 'lucide-react'
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase/client'
 
@@ -8,7 +8,6 @@ export default function AdminDashboard() {
     const [stats, setStats] = useState([
         { name: 'Projets', value: '0', icon: Briefcase, color: 'bg-blue-500' },
         { name: 'Posts LinkedIn', value: '0', icon: Linkedin, color: 'bg-[#0077b5]' },
-        { name: 'Visiteurs', value: '--', icon: Users, color: 'bg-green-500' },
     ]);
     const [recentProjects, setRecentProjects] = useState([]);
     const [recentPosts, setRecentPosts] = useState([]);
@@ -26,7 +25,6 @@ export default function AdminDashboard() {
                 setStats([
                     { name: 'Projets', value: projectsRes.count?.toString() || '0', icon: Briefcase, color: 'bg-blue-500' },
                     { name: 'Posts LinkedIn', value: postsRes.count?.toString() || '0', icon: Linkedin, color: 'bg-[#0077b5]' },
-                    { name: 'Visiteurs', value: '1.2k', icon: Users, color: 'bg-green-500' },
                 ]);
 
                 setRecentProjects(projectsRes.data || []);
@@ -64,7 +62,7 @@ export default function AdminDashboard() {
             </div>
 
             {/* Stats Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {stats.map((stat) => (
                     <div key={stat.name} className="bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-xl shadow-slate-200/20 flex flex-col gap-6 relative overflow-hidden group">
                         <div className={`absolute top-0 right-0 size-32 ${stat.color} opacity-5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 transition-transform duration-500 group-hover:scale-150`} />
