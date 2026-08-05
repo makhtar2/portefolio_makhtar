@@ -18,7 +18,7 @@ const CVPage = async () => {
     const projects = await getProjects();
     const projectNames = projects.length > 0 
         ? projects.map(p => p.name).join(', ') 
-        : "GymScore Sénégal, Sherifa Parfumerie, Vote Numérique UCAK, Gestion Kurel, Qurratul Ayni, Faaris Signature, PARAR, Roadmap Tracker MLOps, Babos.";
+        : "E-HealthCard, ImmoAgence, Al Karim Vision, Global Air SN, GymScore, Sherifa Parfumerie, Vote Numérique UCAK, Gestion Kurel, Qurratul Ayni, Faaris Signature, PARAR, Babos.";
 
     return (
         <div className="min-h-screen bg-slate-50 py-12 px-4 print:p-0 print:bg-white">

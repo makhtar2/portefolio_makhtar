@@ -44,3 +44,26 @@ VALUES (
   'https://www.alkarimvision.com/',
   ARRAY['Next.js', 'React', 'E-commerce', 'Tailwind CSS']
 );
+
+-- E-HealthCard (ajout manuel)
+INSERT INTO public.projects (name, description, image_url, category, site_url, tech_stack)
+VALUES (
+  'E-HealthCard',
+  'Application mobile de carnet de santé numérique sécurisé (Offline-First) pour le Sénégal, avec monitoring industriel (FastAPI, Prometheus, Grafana).',
+  'placeholder-image.png',
+  'web',
+  'https://github.com/makhtar2/CarnetDeSante',
+  ARRAY['Flutter', 'FastAPI', 'Prometheus', 'Grafana', 'Docker']
+);
+
+-- ImmoAgence (ajout manuel)
+INSERT INTO public.projects (name, description, image_url, category, site_url, tech_stack)
+VALUES (
+  'ImmoAgence',
+  'Plateforme complète de gestion immobilière développée en PHP natif et MySQL, avec espace d''administration sécurisé pour la gestion des annonces.',
+  'placeholder-image.png',
+  'web',
+  '#',
+  ARRAY['PHP', 'MySQL', 'JavaScript', 'HTML5', 'CSS3']
+);
+
