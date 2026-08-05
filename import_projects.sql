@@ -49,7 +49,7 @@ VALUES (
 INSERT INTO public.projects (name, description, image_url, category, site_url, tech_stack)
 VALUES (
   'E-HealthCard',
-  'Application mobile de carnet de santé numérique sécurisé (Offline-First) pour le Sénégal, avec monitoring industriel (FastAPI, Prometheus, Grafana).',
+  'Projet académique d''apprentissage de Flutter : Carnet de santé numérique sécurisé (Offline-First) couplé à une infrastructure de monitoring (FastAPI, Prometheus, Grafana).',
   'placeholder-image.png',
   'web',
   'https://github.com/makhtar2/CarnetDeSante',
@@ -60,7 +60,7 @@ VALUES (
 INSERT INTO public.projects (name, description, image_url, category, site_url, tech_stack)
 VALUES (
   'ImmoAgence',
-  'Plateforme complète de gestion immobilière développée en PHP natif et MySQL, avec espace d''administration sécurisé pour la gestion des annonces.',
+  'Exercice pratique d''apprentissage de PHP natif et MySQL : Conception et développement d''une plateforme de gestion d''annonces immobilières.',
   'placeholder-image.png',
   'web',
   '#',
