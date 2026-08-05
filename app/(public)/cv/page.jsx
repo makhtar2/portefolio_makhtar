@@ -83,7 +83,7 @@ const CVPage = async () => {
                             <div className="space-y-2">
                                 <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Développement</p>
                                 <div className="flex flex-wrap gap-1.5">
-                                    {["Java (POO)", "Python", "FastAPI", "Django", "Next.js", "Angular"].map(s => (
+                                    {["Next.js", "Flutter (Mobile)", "FastAPI (Microservices)", "React", "Node.js", "PHP", "Java"].map(s => (
                                         <span key={s} className="px-2 py-0.5 bg-white/5 rounded text-[9px] font-bold">{s}</span>
                                     ))}
                                 </div>
@@ -99,7 +99,7 @@ const CVPage = async () => {
                             <div className="space-y-2">
                                 <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest">IA & Automatisation</p>
                                 <div className="flex flex-wrap gap-1.5">
-                                    {["n8n (Workflows)", "Prompt Eng.", "Git/GitHub", "CI/CD"].map(s => (
+                                    {["n8n (Workflows)", "Prompt Eng.", "Git/GitHub", "Docker", "CI/CD"].map(s => (
                                         <span key={s} className="px-2 py-0.5 bg-white/5 rounded text-[9px] font-bold">{s}</span>
                                     ))}
                                 </div>
@@ -107,15 +107,15 @@ const CVPage = async () => {
                             <div className="space-y-2">
                                 <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Bases de Données</p>
                                 <div className="flex flex-wrap gap-1.5">
-                                    {["MySQL", "PostgreSQL", "Modélisation"].map(s => (
+                                    {["MySQL", "PostgreSQL", "SQLite", "Supabase"].map(s => (
                                         <span key={s} className="px-2 py-0.5 bg-white/5 rounded text-[9px] font-bold">{s}</span>
                                     ))}
                                 </div>
                             </div>
                             <div className="space-y-2">
-                                <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Design</p>
+                                <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Design & Médias</p>
                                 <div className="flex flex-wrap gap-1.5">
-                                    {["Figma", "Photoshop", "Illustrator", "Blender"].map(s => (
+                                    {["Figma (UI/UX)", "Photoshop", "Premiere Pro (Montage)", "Community Mgmt", "Canva"].map(s => (
                                         <span key={s} className="px-2 py-0.5 bg-white/5 rounded text-[9px] font-bold">{s}</span>
                                     ))}
                                 </div>
@@ -164,6 +164,15 @@ const CVPage = async () => {
                             <div className="h-[2px] w-8 bg-brand-primary" /> Expériences Professionnelles
                         </h3>
                         <div className="space-y-8 print:space-y-4">
+                            <div className="relative pl-6 border-l-2 border-slate-100">
+                                <div className="absolute top-0 -left-[5px] size-2 rounded-full bg-brand-primary" />
+                                <div className="flex justify-between items-start mb-1">
+                                    <h4 className="font-black text-slate-900 text-sm">Mentor — Hackathon Touba 2025</h4>
+                                    <span className="text-[10px] font-black text-slate-400">Août 2025</span>
+                                </div>
+                                <p className="text-brand-primary font-black text-[10px] uppercase tracking-widest mb-2">UCAK × Sonatel</p>
+                                <p className="text-xs text-slate-500 font-bold">Encadrement technique des équipes d'étudiants en développement web/mobile & architecture de projets.</p>
+                            </div>
                             <div className="relative pl-6 border-l-2 border-slate-100">
                                 <div className="absolute top-0 -left-[5px] size-2 rounded-full bg-brand-primary" />
                                 <div className="flex justify-between items-start mb-1">
