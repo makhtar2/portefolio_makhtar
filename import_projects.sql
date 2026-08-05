@@ -45,6 +45,18 @@ VALUES (
   ARRAY['Next.js', 'React', 'E-commerce', 'Tailwind CSS']
 );
 
+-- Aksil Touba (ajout manuel)
+INSERT INTO public.projects (name, description, image_url, category, site_url, tech_stack)
+VALUES (
+  'Aksil Touba',
+  'La plateforme du tourisme religieux à Touba. S''orienter dans la ville sainte, retrouver un proche égaré, découvrir le patrimoine mouride — disponible toute l''année même sans connexion internet.',
+  'aksiltouba.png',
+  'web',
+  'https://aksiltouba.com/',
+  ARRAY['Next.js', 'React', 'Tailwind CSS', 'PWA', 'Offline Mode']
+);
+
+
 -- E-HealthCard (ajout manuel)
 INSERT INTO public.projects (name, description, image_url, category, site_url, tech_stack)
 VALUES (
