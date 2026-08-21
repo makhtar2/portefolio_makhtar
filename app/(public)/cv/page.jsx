@@ -176,11 +176,11 @@ const CVPage = async () => {
                             <div className="relative pl-6 border-l-2 border-slate-100">
                                 <div className="absolute top-0 -left-[5px] size-2 rounded-full bg-brand-primary" />
                                 <div className="flex justify-between items-start mb-1">
-                                    <h4 className="font-black text-slate-900 text-sm">Fondateur & Lead Designer</h4>
+                                    <h4 className="font-black text-slate-900 text-sm">Co-fondateur & CTO</h4>
                                     <span className="text-[10px] font-black text-slate-400">2023 – Présent</span>
                                 </div>
-                                <p className="text-brand-primary font-black text-[10px] uppercase tracking-widest mb-2">JULO Startup</p>
-                                <p className="text-xs text-slate-500 font-bold">Gestion technique de projets digitaux et création d’identités visuelles institutionnelles.</p>
+                                <p className="text-brand-primary font-black text-[10px] uppercase tracking-widest mb-2">Julo (Julo Prod)</p>
+                                <p className="text-xs text-slate-500 font-bold">Direction technique, développement de la plateforme e-commerce et direction artistique du pôle sérigraphie & branding.</p>
                             </div>
                             <div className="relative pl-6 border-l-2 border-slate-100">
                                 <div className="absolute top-0 -left-[5px] size-2 rounded-full bg-brand-primary" />
