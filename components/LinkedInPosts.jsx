@@ -98,16 +98,7 @@ const LinkedInPosts = ({ posts = [] }) => {
 
                             {/* Media Content */}
                             {resolvedImage && (
-                                <a href={post.url} target="_blank" rel="noopener noreferrer" className="relative w-full h-64 sm:h-72 lg:h-80 bg-slate-900 border-y border-slate-100 overflow-hidden flex items-center justify-center group/img block">
-                                    {/* Ambient blurred backdrop for aesthetic full-width fill */}
-                                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                                    <img
-                                        src={resolvedImage}
-                                        alt=""
-                                        aria-hidden="true"
-                                        className="absolute inset-0 w-full h-full object-cover blur-xl scale-125 opacity-35 transition-transform duration-700 group-hover/img:scale-135"
-                                    />
-                                    {/* Sharp foreground image - fully visible with natural framing */}
+                                <a href={post.url} target="_blank" rel="noopener noreferrer" className="relative w-full aspect-[4/3] sm:aspect-[16/10] bg-slate-100 border-y border-slate-100 overflow-hidden block group/img">
                                     {/* eslint-disable-next-line @next/next/no-img-element */}
                                     <img
                                         src={resolvedImage}
@@ -117,7 +108,7 @@ const LinkedInPosts = ({ posts = [] }) => {
                                                 e.currentTarget.parentElement.style.display = 'none';
                                             }
                                         }}
-                                        className="relative z-10 max-h-full max-w-full object-contain drop-shadow-md transition-transform duration-500 group-hover/img:scale-[1.02]"
+                                        className="w-full h-full object-cover object-top group-hover/img:scale-105 transition-transform duration-500"
                                     />
                                 </a>
                             )}
