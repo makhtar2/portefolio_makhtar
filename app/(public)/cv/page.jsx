@@ -72,7 +72,7 @@ const CVPage = async () => {
                             <div className="size-8 rounded-lg bg-white/5 flex items-center justify-center text-brand-primary">
                                 <Globe size={14} />
                             </div>
-                            <span>almuxtaardev.vercel.app</span>
+                            <span>portefoliomakhtar.vercel.app</span>
                         </div>
                     </div>
 
@@ -81,9 +81,9 @@ const CVPage = async () => {
                         <h3 className="text-brand-primary font-black uppercase text-[10px] tracking-[0.2em] border-b border-white/10 pb-2">Expertise</h3>
                         <div className="flex flex-col gap-5 print:gap-2.5">
                             <div className="space-y-2">
-                                <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Développement</p>
+                                <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Systèmes & Backend</p>
                                 <div className="flex flex-wrap gap-1.5">
-                                    {["Next.js", "Flutter (Mobile)", "FastAPI (Microservices)", "React", "Node.js", "PHP", "Java"].map(s => (
+                                    {["FastAPI (Microservices)", "Next.js", "Node.js", "Python", "Java", "PostgreSQL", "Supabase"].map(s => (
                                         <span key={s} className="px-2 py-0.5 bg-white/5 rounded text-[9px] font-bold">{s}</span>
                                     ))}
                                 </div>
@@ -91,31 +91,31 @@ const CVPage = async () => {
                             <div className="space-y-2">
                                 <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Réseaux & Sécurité</p>
                                 <div className="flex flex-wrap gap-1.5">
-                                    {["Cisco CCNA", "Routage", "Commutation", "Cybersécurité"].map(s => (
+                                    {["Cisco CCNA (2025)", "Routage / Switching", "Cybersécurité", "TCP/IP"].map(s => (
                                         <span key={s} className="px-2 py-0.5 bg-white/5 rounded text-[9px] font-bold">{s}</span>
                                     ))}
                                 </div>
                             </div>
                             <div className="space-y-2">
-                                <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest">IA & Automatisation</p>
+                                <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Automatisation & DevOps</p>
                                 <div className="flex flex-wrap gap-1.5">
-                                    {["n8n (Workflows)", "Prompt Eng.", "Git/GitHub", "Docker", "CI/CD"].map(s => (
+                                    {["n8n (Workflows)", "Docker", "CI/CD", "Webhooks", "Git/GitHub"].map(s => (
                                         <span key={s} className="px-2 py-0.5 bg-white/5 rounded text-[9px] font-bold">{s}</span>
                                     ))}
                                 </div>
                             </div>
                             <div className="space-y-2">
-                                <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Bases de Données</p>
+                                <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Mobile & Frontend</p>
                                 <div className="flex flex-wrap gap-1.5">
-                                    {["MySQL", "PostgreSQL", "SQLite", "Supabase"].map(s => (
+                                    {["Flutter (iOS/Android)", "React", "Tailwind CSS", "REST/gRPC"].map(s => (
                                         <span key={s} className="px-2 py-0.5 bg-white/5 rounded text-[9px] font-bold">{s}</span>
                                     ))}
                                 </div>
                             </div>
                             <div className="space-y-2">
-                                <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Design & Médias</p>
+                                <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Design & Product</p>
                                 <div className="flex flex-wrap gap-1.5">
-                                    {["Figma (UI/UX)", "Photoshop", "Premiere Pro (Montage)", "Community Mgmt", "Canva"].map(s => (
+                                    {["Figma (Design Systems)", "Photoshop", "Premiere Pro", "UI/UX"].map(s => (
                                         <span key={s} className="px-2 py-0.5 bg-white/5 rounded text-[9px] font-bold">{s}</span>
                                     ))}
                                 </div>
@@ -129,11 +129,11 @@ const CVPage = async () => {
                         <div className="space-y-3">
                             <div className="flex justify-between text-[11px] font-bold">
                                 <span>Français</span>
-                                <span className="text-brand-primary">Courant</span>
+                                <span className="text-brand-primary">Courant / C2</span>
                             </div>
                             <div className="flex justify-between text-[11px] font-bold">
                                 <span>Anglais</span>
-                                <span className="text-slate-400">Technique</span>
+                                <span className="text-slate-400">Technique / B2</span>
                             </div>
                             <div className="flex justify-between text-[11px] font-bold">
                                 <span>Wolof</span>
@@ -151,10 +151,10 @@ const CVPage = async () => {
                             Makhtar <br /><span className="text-brand-gradient">Wade</span>
                         </h2>
                         <p className="text-brand-secondary font-black text-xs sm:text-sm uppercase tracking-[0.3em] mb-8 print:mb-3">
-                            Développeur Full-Stack & Designer UI/UX
+                            Ingénieur Logiciel & Architecte Systèmes Distribués
                         </p>
                         <p className="text-slate-500 font-bold text-sm sm:text-base leading-relaxed max-w-xl">
-                            Étudiant entrepreneur et fondateur de la startup JULO. Spécialisé dans les architectures distribuées et l&apos;automatisation. Profil hybride alliant rigueur technique logicielle, maîtrise des infrastructures réseaux (CCNA) et expertise en design UI/UX.
+                            Étudiant entrepreneur et fondateur de la startup JULO. Spécialisé dans les architectures distribuées, l&apos;automatisation de flux métiers (n8n) et les microservices. Profil hybride alliant développement logiciel haute performance, infrastructure réseau certifiée Cisco CCNA et conception de produits UI/UX.
                         </p>
                     </div>
 
@@ -258,7 +258,7 @@ const CVPage = async () => {
                             © 2026 Tous droits réservés
                         </div>
                         <div className="size-16 bg-slate-100 rounded-2xl flex items-center justify-center text-[8px] font-black text-slate-300 text-center uppercase tracking-widest p-2">
-                            almuxtaardev.vercel.app
+                            portefoliomakhtar.vercel.app
                         </div>
                     </div>
                 </div>
