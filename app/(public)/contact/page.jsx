@@ -123,7 +123,7 @@ export default function ContactPage() {
                                 <b>Week-end :</b> Sur rendez-vous
                             </p>
                             <p className="text-sm text-slate-400 italic border-t border-white/10 pt-4">
-                                "Je m'efforce de répondre à toutes les demandes sous 24h."
+                                &quot;Je m&apos;efforce de répondre à toutes les demandes sous 24h.&quot;
                             </p>
                             <button 
                                 onClick={handleWhatsAppClick}

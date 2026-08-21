@@ -15,7 +15,7 @@ const ProjectCard = ({ project, index = 0 }) => {
     const projectName = project.name || 'Projet Sans Nom'
     const description = project.description || project.desc || ''
     const techStack = (project.tech_stack || project.tech || []).slice(0, 3)
-    const isDesign = project.category === 'Design' || projectUrl.includes('canva.com')
+    const isDesign = (project.category || '').toLowerCase() === 'design' || projectUrl.includes('canva.com') || projectUrl.includes('canva.link')
     const isLive = projectUrl !== '#' && !projectUrl.includes('example.com')
 
     return (

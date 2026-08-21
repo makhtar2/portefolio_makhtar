@@ -20,17 +20,13 @@ export default function AdminLinkedIn() {
         published_at: new Date().toISOString().split('T')[0]
     });
 
-    useEffect(() => {
-        fetchPosts();
-    }, []);
-
     const fetchPosts = async () => {
         try {
             const { data, error } = await supabase
                 .from('linkedin_posts')
                 .select('*')
                 .order('published_at', { ascending: false });
-            
+
             if (error) throw error;
             setPosts(data || []);
         } catch (error) {
@@ -39,6 +35,11 @@ export default function AdminLinkedIn() {
             setLoading(false);
         }
     };
+
+    useEffect(() => {
+        // eslint-disable-next-line react-hooks/set-state-in-effect -- standard fetch-on-mount; setState only runs after the internal await
+        fetchPosts();
+    }, []);
 
     const handleAddPost = async (e) => {
         e.preventDefault();
@@ -133,7 +134,7 @@ export default function AdminLinkedIn() {
                                     />
                                 </div>
                                 <div className="space-y-2">
-                                    <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-4">URL de l'image (Optionnel)</label>
+                                    <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-4">URL de l&apos;image (Optionnel)</label>
                                     <input 
                                         type="text" 
                                         value={newPost.image_url}

@@ -154,7 +154,7 @@ const CVPage = async () => {
                             Développeur Full-Stack & Designer UI/UX
                         </p>
                         <p className="text-slate-500 font-bold text-sm sm:text-base leading-relaxed max-w-xl">
-                            Étudiant entrepreneur et fondateur de la startup JULO. Spécialisé dans les architectures distribuées et l'automatisation. Profil hybride alliant rigueur technique logicielle, maîtrise des infrastructures réseaux (CCNA) et expertise en design UI/UX.
+                            Étudiant entrepreneur et fondateur de la startup JULO. Spécialisé dans les architectures distribuées et l&apos;automatisation. Profil hybride alliant rigueur technique logicielle, maîtrise des infrastructures réseaux (CCNA) et expertise en design UI/UX.
                         </p>
                     </div>
 
@@ -171,7 +171,7 @@ const CVPage = async () => {
                                     <span className="text-[10px] font-black text-slate-400">Août 2025</span>
                                 </div>
                                 <p className="text-brand-primary font-black text-[10px] uppercase tracking-widest mb-2">UCAK × Sonatel</p>
-                                <p className="text-xs text-slate-500 font-bold">Encadrement technique des équipes d'étudiants en développement web/mobile & architecture de projets.</p>
+                                <p className="text-xs text-slate-500 font-bold">Encadrement technique des équipes d&apos;étudiants en développement web/mobile & architecture de projets.</p>
                             </div>
                             <div className="relative pl-6 border-l-2 border-slate-100">
                                 <div className="absolute top-0 -left-[5px] size-2 rounded-full bg-brand-primary" />

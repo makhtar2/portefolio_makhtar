@@ -18,11 +18,11 @@ const Footer = () => {
         {
             title: "SERVICES",
             links: [
-                { text: "Développement Web", path: '/services' },
-                { text: "UI/UX Design", path: '/services' },
-                { text: "Infographie & Branding", path: '/services' },
-                { text: "Sérigraphie Pro", path: '/services' },
-                { text: "Maintenance Informatique", path: '/services' },
+                { text: "Systèmes Distribués", path: '/services' },
+                { text: "Automatisation n8n", path: '/services' },
+                { text: "Intégration d'IA", path: '/services' },
+                { text: "Apps Web & Mobiles", path: '/services' },
+                { text: "Cloud & Sécurité", path: '/services' },
             ]
         },
         {
@@ -52,7 +52,7 @@ const Footer = () => {
                             AlmuxtaarDev<span className="text-brand-primary">.</span>
                         </Link>
                         <p className="mt-6 text-slate-500 font-medium text-sm leading-relaxed max-w-sm">
-                            Développeur Full Stack & Designer passionné par la création d'expériences numériques innovantes basées à Touba, Thiès et Dakar.
+                            Développeur Full Stack spécialisé dans les architectures distribuées, l&apos;automatisation de processus et le design d&apos;expériences logicielles innovantes.
                         </p>
                         <div className="flex items-center gap-4 mt-8">
                             {socialIcons.map((item, i) => (

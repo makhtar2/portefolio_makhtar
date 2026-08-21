@@ -10,70 +10,106 @@ import {
     Globe2,
     Linkedin
 } from 'lucide-react'
+import Image from 'next/image'
 import Title from './Title'
+
+const getPostImage = (post) => {
+    if (!post?.image_url) return null;
+    
+    // LinkedIn CDN URLs (media.licdn.com) expire with time tokens and return 403 Forbidden
+    if (post.image_url.includes('licdn.com')) {
+        const titleLower = (post.title || '').toLowerCase();
+        const contentLower = (post.content || '').toLowerCase();
+        
+        if (titleLower.includes('sipen') || contentLower.includes('sipen')) {
+            return '/assets/events/sipendakar2025.png';
+        }
+        if (titleLower.includes('mentor') || titleLower.includes('hackathon touba') || contentLower.includes('mentor')) {
+            return '/assets/events/coachhackathon.png';
+        }
+        if (titleLower.includes('touba bootcamp') || contentLower.includes('touba bootcamp')) {
+            return '/assets/events/bootcampmouridpro.png';
+        }
+        if (titleLower.includes('ccak') || titleLower.includes('cheikhoul khadim') || contentLower.includes('ccak')) {
+            return '/assets/events/event3.jpg';
+        }
+        if (titleLower.includes('docsen') || titleLower.includes('healthtech') || contentLower.includes('healthcard')) {
+            return '/assets/events/mentor.png';
+        }
+    }
+    
+    return post.image_url;
+};
 
 const LinkedInPosts = ({ posts = [] }) => {
     if (posts.length === 0) return null;
 
     return (
-        <section className='px-6 my-24 max-w-7xl mx-auto'>
+        <section className='px-4 sm:px-6 my-16 sm:my-24 max-w-7xl mx-auto'>
             <Title 
                 title="Actualités LinkedIn" 
                 description="Suivez mes derniers partages et réflexions directement depuis mon flux professionnel."
                 visibleButton={false}
             />
 
-            <div className='grid grid-cols-1 lg:grid-cols-3 gap-6 mt-16'>
-                {posts.map((post, index) => (
-                    <motion.div
-                        key={post.id}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: index * 0.1 }}
-                        className='bg-white border border-slate-200 rounded-xl overflow-hidden flex flex-col shadow-sm hover:shadow-md transition-shadow'
-                    >
-                        {/* Header */}
-                        <div className="p-4 flex items-start justify-between">
-                            <div className="flex gap-3">
-                                <div className="size-12 rounded-full bg-slate-100 overflow-hidden border border-slate-100 shrink-0">
-                                    <img src="/assets/hero-main.png" alt="Almuxtaar" className="w-full h-full object-cover" />
+            <div className='grid grid-cols-1 lg:grid-cols-3 gap-6 mt-12 sm:mt-16'>
+                {posts.map((post, index) => {
+                    const resolvedImage = getPostImage(post);
+
+                    return (
+                        <motion.div
+                            key={post.id}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: index * 0.1 }}
+                            className='bg-white border border-slate-200 rounded-2xl sm:rounded-3xl overflow-hidden flex flex-col shadow-sm hover:shadow-md transition-shadow'
+                        >
+                            {/* Header */}
+                            <div className="p-4 sm:p-5 flex items-start justify-between">
+                                <div className="flex gap-3">
+                                    <div className="relative size-12 rounded-full bg-slate-100 overflow-hidden border border-slate-100 shrink-0">
+                                        <Image src="/assets/hero-main.png" alt="Almuxtaar" fill sizes="48px" className="object-cover" />
+                                    </div>
+                                    <div>
+                                        <h4 className="font-black text-slate-900 text-sm tracking-tight flex items-center gap-1">
+                                            AlmuxtaarDev <span className="text-slate-400 font-medium">• 1er</span>
+                                        </h4>
+                                        <p className="text-[11px] text-slate-500 font-bold leading-tight line-clamp-1">
+                                            Développeur Full Stack | UI/UX Designer | JULO
+                                        </p>
+                                        <p className="text-[10px] text-slate-400 font-bold mt-0.5 flex items-center gap-1 uppercase tracking-tighter">
+                                            {new Date(post.published_at).toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' })} • <Globe2 size={10} />
+                                        </p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h4 className="font-black text-slate-900 text-sm tracking-tight flex items-center gap-1">
-                                        AlmuxtaarDev <span className="text-slate-400 font-medium">• 1er</span>
-                                    </h4>
-                                    <p className="text-[11px] text-slate-500 font-bold leading-tight line-clamp-1">
-                                        Développeur Full Stack | UI/UX Designer | JULO
-                                    </p>
-                                    <p className="text-[10px] text-slate-400 font-bold mt-0.5 flex items-center gap-1 uppercase tracking-tighter">
-                                        {new Date(post.published_at).toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' })} • <Globe2 size={10} />
-                                    </p>
-                                </div>
+                                <button className="text-slate-400 hover:text-slate-600">
+                                    <MoreHorizontal size={20} />
+                                </button>
                             </div>
-                            <button className="text-slate-400 hover:text-slate-600">
-                                <MoreHorizontal size={20} />
-                            </button>
-                        </div>
 
-                        {/* Text Content */}
-                        <div className="px-4 pb-4">
-                            <p className="text-sm text-slate-800 font-medium leading-relaxed line-clamp-4">
-                                <span className="font-black block mb-1">{post.title}</span>
-                                {post.content}
-                            </p>
-                        </div>
+                            {/* Text Content */}
+                            <div className="px-4 sm:px-5 pb-4">
+                                <p className="text-xs sm:text-sm text-slate-800 font-medium leading-relaxed line-clamp-4">
+                                    <span className="font-black block mb-1">{post.title}</span>
+                                    {post.content}
+                                </p>
+                            </div>
 
-                        {/* Media Content */}
-                        {post.image_url && (
-                            <a href={post.url} target="_blank" rel="noopener noreferrer" className="relative aspect-video w-full bg-slate-50 border-y border-slate-100 overflow-hidden block">
-                                <img 
-                                    src={post.image_url} 
-                                    alt={post.title} 
-                                    className="w-full h-full object-cover"
-                                />
-                            </a>
-                        )}
+                            {/* Media Content */}
+                            {resolvedImage && (
+                                <a href={post.url} target="_blank" rel="noopener noreferrer" className="relative aspect-video w-full bg-slate-50 border-y border-slate-100 overflow-hidden block">
+                                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                                    <img
+                                        src={resolvedImage}
+                                        alt={post.title}
+                                        onError={(e) => {
+                                            e.currentTarget.style.display = 'none';
+                                        }}
+                                        className="w-full h-full object-cover"
+                                    />
+                                </a>
+                            )}
 
                         {/* Footer / Interactions */}
                         <div className="p-1 px-4 border-t border-slate-50 flex items-center justify-between">
@@ -112,7 +148,7 @@ const LinkedInPosts = ({ posts = [] }) => {
                             ))}
                         </div>
                     </motion.div>
-                ))}
+                )})}
             </div>
             
             <div className="mt-12 text-center">

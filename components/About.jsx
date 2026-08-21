@@ -41,7 +41,7 @@ const About = () => {
                         Fondateur de la startup JULO, je suis un développeur Full-Stack spécialisé dans les architectures distribuées et l’automatisation. Mon profil hybride allie la rigueur technique logicielle à une expertise avancée en design UI/UX.
                     </p>
                     <p className='text-slate-500 font-medium'>
-                        Actuellement en Licence 3 Informatique à l'UCAK, je maîtrise aussi bien le développement (Java, Python, JS) que les infrastructures réseaux (Cisco CCNA).
+                        Actuellement en Licence 3 Informatique à l&apos;UCAK, je maîtrise aussi bien le développement (Java, Python, JS) que les infrastructures réseaux (Cisco CCNA).
                     </p>
 
                     <div className='grid grid-cols-1 sm:grid-cols-2 gap-4 my-4'>

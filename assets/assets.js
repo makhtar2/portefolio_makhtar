@@ -1,43 +1,43 @@
-import { ClockFadingIcon, HeadsetIcon, SendIcon, PaletteIcon, PrinterIcon, MonitorCogIcon, LayoutDashboardIcon, PenToolIcon } from "lucide-react";
+import { Network, Workflow, CodeXml, Smartphone, ShieldCheck, Palette } from "lucide-react";
 
 export const assets = {
 }
 
 export const ourSpecsData = [
     { 
-        title: "Développement Web", 
-        description: "Création de sites web modernes, réactifs et performants utilisant les dernières technologies comme React et Next.js.", 
-        icon: SendIcon, 
+        title: "Systèmes Distribués & APIs", 
+        description: "Conception d'architectures backend scalables, microservices résilients et APIs haute performance (FastAPI, Node.js, PostgreSQL, Supabase).", 
+        icon: Network, 
         accent: '#d9a54e' 
     },
     { 
-        title: "UI/UX Design", 
-        description: "Conception d'interfaces intuitives et d'expériences utilisateur mémorables pour vos applications et sites web.", 
-        icon: ClockFadingIcon, 
+        title: "Automatisation de Processus", 
+        description: "Conception de pipelines d'automatisation de bout en bout avec n8n, webhooks et synchronisation intelligente de vos écosystèmes métiers.", 
+        icon: Workflow, 
         accent: '#c2773a' 
     },
     { 
-        title: "Infographie & Branding", 
-        description: "Conception de logos, flyers, cartes de visite et identités visuelles complètes pour votre marque.", 
-        icon: PaletteIcon, 
+        title: "Développement Web & SaaS", 
+        description: "Développement full-stack moderne avec Next.js et React. Interfaces ultra-réactives, code modulaire et intégrations sur-mesure.", 
+        icon: CodeXml, 
         accent: '#d9a54e' 
     },
     { 
-        title: "Sérigraphie", 
-        description: "Impression personnalisée sur divers supports (T-shirts, gadgets, bâches) avec une qualité professionnelle.", 
-        icon: PrinterIcon, 
+        title: "Applications Mobiles", 
+        description: "Création d'applications multiplateformes performantes avec Flutter pour iOS et Android, connectées à des backends sécurisés.", 
+        icon: Smartphone, 
         accent: '#c2773a' 
     },
     { 
-        title: "Maintenance Informatique", 
-        description: "Diagnostic, réparation et entretien de vos équipements informatiques pour garantir leur performance.", 
-        icon: MonitorCogIcon, 
+        title: "Infrastructures & Réseaux", 
+        description: "Déploiement conteneurisé Docker, intégration continue CI/CD et sécurisation des réseaux d'entreprise (expertise Cisco CCNA).", 
+        icon: ShieldCheck, 
         accent: '#d9a54e' 
     },
     { 
-        title: "Gestion de Projet", 
-        description: "Accompagnement de A à Z dans la réalisation de vos projets digitaux, de la conception à la mise en ligne.", 
-        icon: HeadsetIcon, 
+        title: "UI/UX & Product Design", 
+        description: "Design Systems modulaires sur Figma, prototypage interactif et conception d'expériences utilisateur fluides et centrées conversion.", 
+        icon: Palette, 
         accent: '#c2773a' 
     }
 ]

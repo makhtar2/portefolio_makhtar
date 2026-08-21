@@ -13,7 +13,7 @@ export default function Loading() {
       
       <div className="mt-10 text-center">
         <h2 className="text-xl font-black text-slate-900 tracking-tight animate-pulse">Chargement...</h2>
-        <p className="text-slate-400 font-medium text-xs uppercase tracking-widest mt-2">Préparez-vous à l'élégance</p>
+        <p className="text-slate-400 font-medium text-xs uppercase tracking-widest mt-2">Préparez-vous à l&apos;élégance</p>
       </div>
 
       {/* Subtle skeleton for content placeholder */}

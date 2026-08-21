@@ -10,7 +10,7 @@ import { motion } from 'framer-motion'
 const Hero = () => {
 
     const router = useRouter();
-    const skills = ["React", "Next.js", "Node.js", "Tailwind CSS", "Figma", "Photoshop", "Illustrator", "TypeScript", "Supabase", "Git"];
+    const skills = ["Systèmes Distribués", "n8n Automation", "FastAPI", "Next.js", "Agents IA & RAG", "Flutter", "Docker", "Cisco CCNA", "Supabase", "PostgreSQL", "Figma", "CI/CD"];
 
     return (
         <div className='px-4 sm:px-6 overflow-hidden'>
@@ -48,7 +48,7 @@ const Hero = () => {
                             transition={{ delay: 0.3, duration: 0.5 }}
                             className='text-slate-500 font-bold text-base sm:text-xl leading-relaxed max-w-md mb-10'
                         >
-                            Passionné par la création d'expériences numériques innovantes et d'identités visuelles percutantes.
+                            Spécialisé dans les architectures distribuées, l&apos;automatisation intelligente de processus et le développement de solutions logicielles performantes.
                         </motion.p>
 
                         

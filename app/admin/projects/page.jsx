@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import { Plus, Trash2, Edit, Save, Briefcase, Globe, Code, Loader2 } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import Image from 'next/image'
 import { createClient } from '@/lib/supabase/client'
 import { toast } from 'react-hot-toast'
 
@@ -40,6 +41,7 @@ export default function AdminProjects() {
     };
 
     useEffect(() => {
+        // eslint-disable-next-line react-hooks/set-state-in-effect -- standard fetch-on-mount; setState only runs after the internal await
         fetchProjects();
     }, []);
 
@@ -262,7 +264,7 @@ export default function AdminProjects() {
                             <div className="flex items-center gap-8">
                                 <div className="size-20 bg-slate-50 rounded-[1.5rem] overflow-hidden flex items-center justify-center text-slate-200 border border-slate-100 relative group-hover:scale-105 transition-transform duration-500">
                                     {project.image_url ? (
-                                        <img src={`/assets/projects/${project.image_url}`} alt={project.name} className="w-full h-full object-cover" />
+                                        <Image src={`/assets/projects/${project.image_url}`} alt={project.name} fill sizes="80px" className="object-cover" />
                                     ) : (
                                         <Briefcase size={28} />
                                     )}

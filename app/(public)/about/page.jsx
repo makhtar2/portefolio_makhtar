@@ -147,7 +147,7 @@ export default function AboutPage() {
         className="mt-32 text-center bg-slate-900 rounded-[3rem] p-12 sm:p-20 relative overflow-hidden"
       >
         <div className="absolute inset-0 opacity-20" style={{ background: 'radial-gradient(circle at 50% 0%, #d9a54e, transparent 70%)' }} />
-        <h2 className="text-3xl sm:text-5xl font-black text-white mb-6 relative z-10 tracking-tighter">Envie d'écrire la prochaine ligne avec moi ?</h2>
+        <h2 className="text-3xl sm:text-5xl font-black text-white mb-6 relative z-10 tracking-tighter">Envie d&apos;écrire la prochaine ligne avec moi ?</h2>
         <p className="text-slate-400 font-medium max-w-xl mx-auto mb-10 relative z-10">
           Je suis toujours ouvert à de nouveaux défis, que ce soit pour un projet client ou une collaboration innovante.
         </p>
