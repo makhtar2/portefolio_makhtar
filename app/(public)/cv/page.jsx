@@ -211,12 +211,12 @@ const CVPage = async () => {
                             </h3>
                             <div className="space-y-6">
                                 <div>
-                                    <h4 className="font-black text-slate-900 text-xs">Licence 3 Informatique (DAR)</h4>
-                                    <p className="text-[10px] text-slate-500 font-bold">UCAK | 2023 – Présent</p>
+                                    <h4 className="font-black text-slate-900 text-xs">Licence 3 Informatique (DAR) — Moyenne : 16/20</h4>
+                                    <p className="text-[10px] text-slate-500 font-bold">UCAK | 2023 – Présent • Mention Très Bien</p>
                                 </div>
                                 <div>
                                     <h4 className="font-black text-slate-900 text-xs">Baccalauréat Scientifique (S2)</h4>
-                                    <p className="text-[10px] text-slate-500 font-bold">Lycée Malick SY – Thiès | 2022</p>
+                                    <p className="text-[10px] text-slate-500 font-bold">Lycée Malick SY – Thiès | 2022 • Mention Assez Bien</p>
                                 </div>
                             </div>
                         </div>
